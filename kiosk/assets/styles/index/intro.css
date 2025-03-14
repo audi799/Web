@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#intro {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#intro.visible {
+    display: flex;
+}
+
+#intro > .promotion {
+    background-image: url("../../images/intro.promotion.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+}
+
+#intro > .message {
+    background-color: #093818;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 7.5vw 5vw;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 7.5vw;
+    justify-content: center;
+}
+
+#intro > .message > .logo {
+    width: 15vw;
+}
+
+#intro > .message > .caption {
+    font-size: 5vw;
+}
+
