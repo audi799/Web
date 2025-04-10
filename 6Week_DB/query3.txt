@@ -1,0 +1,58 @@
+create schema `world`;
+create table `world`.`countries`
+(
+    `code`    varchar(20) not null,
+    `name_ko` varchar(10) not null,
+    `name_en` varchar(50) not null,
+    constraint primary key (`code`),
+    constraint unique key (`name_ko`),
+    constraint unique key (`name_en`)
+);
+insert into `world`.`countries`
+values ('KR', '대한민국', 'Korea');
+insert into `world`.`countries`
+values ('JP', '일본', 'Japan');
+insert into `world`.`countries`
+values ('FR', '프랑스', 'France');
+insert into `world`.`countries`
+values ('DE', '독일', 'Germany');
+insert into `world`.`countries`
+values ('GB', '영국', 'Great Britain');
+insert into `world`.`countries`
+values ('US', '미국', 'United States');
+
+create table `world`.`areas`
+(
+    `country_code` varchar(2)         not null,
+    `value`        mediumint unsigned not null,
+    constraint primary key (`country_code`),
+    constraint foreign key (`country_code`) references `world`.`countries` (`code`)
+);
+insert into `world`.`areas`
+values ('KR', 100210);
+insert into `world`.`areas`
+values ('GB', 243610);
+insert into `world`.`areas`
+values ('US', 9834000);
+
+create table `world`.`populations`
+(
+    `country_code` varchar(20)  not null,
+    `as_of`        year         not null,
+    `value`        int unsigned not null,
+    constraint primary key (`country_code`, `as_of`),
+    constraint foreign key (`country_code`) references `world`.`countries` (`code`)
+);
+insert into `world`.`populations`
+values ('KR', 2023, 51784059);
+insert into `world`.`populations`
+values ('KR', 2022, 51815810);
+insert into `world`.`populations`
+values ('DE', 2023, 83294633);
+insert into `world`.`populations`
+values ('DE', 2022, 83369843);
+insert into `world`.`populations`
+values ('US', 2023, 339996563);
+insert into `world`.`populations`
+values ('US', 2022, 338289857);
+

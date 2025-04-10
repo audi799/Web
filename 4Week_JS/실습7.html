@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            top: 0;
+            left: 0;
+            width: 10rem;
+            height: 10rem;
+            position: absolute;
+        }
+
+        .box:first-of-type {
+            background-color: #ec7063;
+        }
+
+        .box:first-of-type:focus {
+            background-color: #e74c3c;
+        }
+
+        .box:nth-of-type(2) {
+            background-color: #5dade2;
+        }
+
+        .box:nth-of-type(2):focus {
+            background-color: #3498db;
+        }
+
+        .box:nth-of-type(3) {
+            background-color: #ffa470;
+        }
+
+        .box:nth-of-type(3):focus {
+            background-color: #ffa426;
+        }
+    </style>
+</head>
+<body>
+<div class="box" tabindex="0"></div>
+<div class="box" tabindex="0"></div>
+<div class="box" tabindex="0"></div>
+<script>
+    const moveFactor = 2.5; // 방향키를 눌렀을 때 요소가 한 번 움직일 rem 단위로 설정한다.
+    const $boxes = document.body.querySelectorAll(':scope > .box'); //요소를 담는 경우 $ 접두사 붙이기로함.
+    const specs = [];
+    let lastZIndex = 0; // 마지막으로 사용한 zIndex 값
+
+    //단축어: $boxes.forof + Tab키
+    for (let $box of $boxes) {
+        const spec = {
+            element: $box,
+            top: 0,
+            left: 0,
+        };
+        specs.push(spec);
+
+        $box.addEventListener('focusin', () => {
+            if (lastZIndex >= $boxes.length) {
+                $boxes.forEach(($x) => {
+                    $x.style.zIndex = parseInt($x.style.zIndex) - 1;
+                });
+                lastZIndex = $boxes.length -1;
+            }
+            $box.style.zIndex = ++lastZIndex;
+        })
+
+        // 두개일때만 한정.
+        // $box.addEventListener('focusin', () => {
+        //     $boxes.forEach($otherBox => $otherBox.style.zIndex = '0');
+        //     $box.style.zIndex = '1';
+        // })
+
+        $box.addEventListener('keydown', (e) => {
+            const toMove = moveFactor * (e.shiftKey === true ? 2 : 1);
+            if (e.key === 'ArrowRight') {
+                spec.left += toMove;
+            } else if (e.key === 'ArrowLeft') {
+                spec.left -= toMove;
+                if (spec.left < 0) {
+                    spec.left = 0;
+                }
+            } else if (e.key === 'ArrowUp') {
+                spec.top -= toMove;
+                if (spec.top < 0) {
+                    spec.top = 0;
+                }
+            } else if (e.key === 'ArrowDown') {
+                spec.top += toMove;
+            }
+
+            $box.style.left = spec.left + 'rem';
+            $box.style.top = spec.top + 'rem';
+        })
+    }
+
+</script>
+</body>
+</html>

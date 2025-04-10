@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS10</title>
+    <style>
+        input[type="checkbox"]:not(:checked) + span {
+            color: red;
+        }
+
+        input:read-only {
+            cursor: not-allowed;
+        }
+
+        input:read-write {
+            background-color: #eef0ff;
+        }
+
+    </style>
+</head>
+<body>
+
+<input type="checkbox">
+<span>동의합니다.</span>
+
+<br><br>
+
+<input type="text"> <br>
+<input type="text"> <br>
+<input readonly type="text"> <br>
+<input type="text"> <br>
+<input type="text"> <br>
+
+</body>
+</html>

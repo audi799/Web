@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>실습2</title>
+    <style>
+        .container > .tab-container {
+            background-color: #eaecee;
+        }
+
+        .container > .tab-container > label {
+            background-color: #eaecee;
+            color: #808b96;
+            display: inline-block;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .container > .tab-container > label:has(input:checked) {
+            background-color: #273746;
+            color: #eaecee;
+        }
+
+        .container > .content-wrapper > .content {
+            display: none;
+        }
+
+        .container > .tab-container:has(input[value="daegu"]:checked) ~ .content-wrapper > .content[data-value="daegu"] {
+            display: block;
+        }
+
+        .container > .tab-container:has(input[value="tokyo"]:checked) ~ .content-wrapper > .content[data-value="tokyo"] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tab-container">
+        <label>
+            <span>대구</span>
+            <input checked name="tab" type="radio" value="daegu">
+        </label>
+        <label>
+            <span>도쿄</span>
+            <input name="tab" type="radio" value="tokyo">
+        </label>
+    </div>
+    <div class="content-wrapper">
+        <!--        <div class="content" data-value="daegu">대구 내용</div>-->
+        <!--        <div class="content" data-value="tokyo">도쿄 내용</div>-->
+        <iframe class="content"
+                data-value="daegu"
+                src="https://api.wo-cloud.com/content/widget/?geoObjectKey=10890338&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
+                name="CW2" scrolling="no" width="290" height="318" frameborder="0"
+                style="border: 1px solid #10658E;border-radius: 8px"></iframe>
+        <iframe class="content"
+                data-value="tokyo"
+                src="https://api.wo-cloud.com/content/widget/?geoObjectKey=14249651&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
+                name="CW2" scrolling="no" width="290" height="318" frameborder="0"
+                style="border: 1px solid #10658E;border-radius: 8px"></iframe>
+    </div>
+</div>
+
+</body>
+</html>

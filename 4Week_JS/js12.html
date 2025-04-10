@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.invalid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form id="loginForm">
+    <label>
+        <input name="em" type="text">
+    </label>
+    <label>
+        <input name="pw" type="password">
+    </label>
+</form>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+
+    console.log(loginForm['em'].getAttribute('type'));
+
+    loginForm['em'].setAttribute('placeholder', '입력해봐라');
+    // loginForm['em'].setAttribute('disabled', '');
+
+    console.log(loginForm['em'].hasAttribute('class'));
+
+    loginForm.classList.add('blah');
+    loginForm.removeAttribute('class');
+
+    loginForm['em'].addEventListener('click', () => {
+        console.log('클릭');
+    })
+
+    loginForm['em'].addEventListener('mousedown', () => {
+        console.log('마우스다운 실행됨');
+    })
+
+    loginForm['em'].addEventListener('mouseup', () => {
+        console.log('마우스업 실행됨');
+    })
+
+    loginForm['em'].addEventListener('mouseenter', () => {
+        console.log('마우스업 들어옴');
+    })
+
+    loginForm['em'].addEventListener('mouseleave', () => {
+        console.log('마우스업 나감');
+    })
+
+    loginForm['em'].addEventListener('focusin', () => {
+        console.log('깜빡이 들어옴');
+    })
+
+    loginForm['em'].addEventListener('focusout', () => {
+        console.log('깜빡이 나감');
+    })
+
+    loginForm['em'].addEventListener('keydown', (e) => {
+        console.log(e);
+        console.log('키 누름');
+    })
+
+    loginForm['em'].addEventListener('keyup', () => {
+        console.log('키 떼짐');
+    })
+
+    loginForm['em'].addEventListener('wheel', (e) => {
+        console.log('마우스 휠 돌아감');
+        if (e.deltaY > 0) {
+            console.log('내림')
+        } else {
+            console.log('올림')
+        }
+    })
+
+    // loginForm['pw'].onclick = () => {
+    //     console.log('onclick');
+    // }
+
+    const toCall = () => {
+        console.log('클릭');
+    }
+    // loginForm['pw'].addEventListener('click', toCall);
+    // loginForm['pw'].removeEventListener('click', toCall);
+    loginForm.pw.addEventListener('click', toCall);
+    loginForm.pw.removeEventListener('click', toCall);
+
+</script>
+
+</body>
+
+</html>

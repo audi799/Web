@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>실습1</title>
+    <style>
+        dl {
+            width: 25rem;
+        }
+
+        dt {
+            background-color: #273746;
+            color: #eaecee;
+        }
+
+        dt > label {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            position: relative;
+        }
+
+        dt > label > .toggle {
+            right: 0.75rem;
+            height: 1rem;
+            display: none;
+            position: absolute;
+        }
+
+        dt > label > input {
+            display: none;
+        }
+
+        dt > label > input:checked ~ .toggle.collapse {
+            display: inline-block;
+        }
+
+        dt > label > input:not(:checked) ~ .toggle.expand {
+            display: inline-block;
+        }
+
+        dd {
+            background-color: #eaecee;
+            display: none;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        dt:has(input:checked) + dd {
+            display: none;
+        }
+
+        dt:has(input:not(:checked)) + dd {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>
+        <label>
+            <span>IVE</span>
+            <input type="checkbox">
+            <img class="toggle collapse" src="prac_dt-collapse.png" alt="축소">
+            <img class="toggle expand" src="prac_dt-expand.png" alt="확장">
+        </label>
+    </dt>
+    <dd>2021년 12월 1일에 데뷔한 스타쉽엔터테인먼트 소속의 6인조 다국적 걸그룹이다.</dd>
+
+    <dt>
+        <label>
+            <span>aespa</span>
+            <input type="checkbox">
+            <img class="toggle collapse" src="prac_dt-collapse.png" alt="축소">
+            <img class="toggle expand" src="prac_dt-expand.png" alt="확장">
+        </label>
+    </dt>
+    <dd>2020년 11월 17일에 데뷔한 SM엔터테인먼트 소속의 4인조 다국적 걸그룹니다.</dd>
+</dl>
+</body>
+</html>

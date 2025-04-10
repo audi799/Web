@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS9</title>
+    <style>
+        label:focus-within > span {
+            color: #3498db;
+        }
+
+        label:focus-within > input {
+            color: #3498db;
+        }
+
+        /*label > input {*/
+        /*    color: inherit;*/
+        /*}*/
+
+        /*label:focus-within {*/
+        /*    color: #3498db;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<label>
+    <span>이메일</span>
+    <br>
+    <input type="text" value="abcdef123456">
+</label>
+<br><br>
+<label>
+    <span>비밀번호</span>
+    <br>
+    <input type="text" value="abcdef123456">
+</label>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js5</title>
+    <script>
+        let scoreMap = {
+            ENG: 98,
+            KOR: 77,
+            MTH: 44
+        };
+        // 위 scoreMap이 가지는 키와 값이 각각 과목과정수라고 했을 때, 평균 점수를 구하여 출력하세요.
+        // === 정답 ===
+        // 평균:73
+
+        const scores = Object.values(scoreMap);
+        // 점수만 필요함으로
+        const average = scores.reduce((acc, x) => acc + x, 0) / scores.length;
+        // 나누는 값을 3으로 지정하면 쌍의 개수가 변할때 유연하게 대처하지 못함. (하드코딩)
+
+        //혹은 위와 같이 reduce를 사용하지 않고, 아래와 같이 forEach를 사용하여 점수의 합계를 구할수 있음.
+        // let average = 0;
+        // scores.forEach((score) => average = average + score);
+        // average = average / scores.length;
+
+        console.log(`평균: ${average}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+

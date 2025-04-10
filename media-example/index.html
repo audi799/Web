@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>미디어쿼리 사용 예제</title>
+    <style>
+        #size {
+            top: 50%;
+            left: 50%;
+            background-color: #FFFFFFF0;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            justify-content: center;
+        }
+
+        #size > .value {
+            font-weight: 600;
+        }
+
+        #box {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            position: fixed;
+            z-index: 0;
+        }
+
+        /* 화면의 가로 크기가 100rem 이하일때만 적용할 선택자 */
+        @media screen and (max-width: 100rem) {
+            #box {
+                background-color: #5F8B4C;
+            }
+        }
+
+        /* 화면의 가로 크기가 80rem 이하일때만 적용할 선택자 */
+        @media screen and (max-width: 80rem) {
+            #box {
+                background-color: #FFDDAB;
+            }
+        }
+
+        /* 화면의 가로 크기가 60rem 이하일때만 적용할 선택자 */
+        @media screen and (max-width: 60rem) {
+            #box {
+                background-color: #FF9A9A;
+            }
+        }
+
+        /* 화면의 가로 크기가 40rem 이하일때만 적용할 선택자 */
+        @media screen and (max-width: 40rem) {
+            #box {
+                background-color: #945034;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="size">
+    현재 미디어의 크기는 가로<span class="value" id="width">0</span>px, 세로<span class="value" id="height">0</span>px 입니다.
+</div>
+<div id="box"></div>
+<script>
+    const $width = document.getElementById('width');
+    const $height = document.getElementById('height');
+    window.addEventListener('resize', () => {
+        $width.innerText = window.innerWidth.toLocaleString();
+        $height.innerText = window.innerHeight.toLocaleString();
+    });
+    window.addEventListener('load', () => {
+        window.dispatchEvent(new Event('resize'));
+    });
+</script>
+</body>
+</html>

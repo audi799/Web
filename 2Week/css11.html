@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS11</title>
+    <style>
+        label:has(> input:required) > span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<label>
+    <span>닉네임</span>
+    <br>
+    <input required type="text">
+</label>
+<br>
+<label>
+    <span>추천인(선택)</span>
+    <br>
+    <input type="text">
+</label>
+
+</body>
+</html>

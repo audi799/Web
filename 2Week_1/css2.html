@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 10rem;
+            height: 10rem;
+            left: 0;
+            position: absolute;
+            transition-duration: 1s;
+            transition-property: left;
+        }
+
+        .box.ease {
+            top: 0;
+            background-color: #ec7063;
+            transition-timing-function: ease;
+            /*transition-timing-function: cubic-bezier(.81, -0.73, .27, 1.64);*/
+            /*cubic-bezier함수의 인자값은 인터넷 특정 사이트에서 값 가져와서 사용하더라*/
+        }
+
+        .box.linear {
+            top: 10rem;
+            background-color: #5499c7;
+            transition-timing-function: linear;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+
+        body:hover > .box {
+            left: calc(100vw - 10rem);
+        }
+    </style>
+</head>
+<body>
+
+<div class="box ease">ease</div>
+<div class="box linear">linear</div>
+
+</body>
+</html>
+

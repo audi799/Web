@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wave-box 예제</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        /* perspective는 3d 효과를 부여하기 위한 것으로 지정하지 않으면 3d 효과가 활성화되지 않음 */
+        /* 50cm는 뷰와의 가상의 거리를 지정하는 것으로 가까워질수록 3d 효과가 극단적으로 발생함(다른 rem 및 px 단위 등도 작동 함) */
+        body {
+            height: 100%;
+            background-color: #eeeeee;
+            margin: initial;
+            perspective: 50cm;
+            position: relative;
+        }
+
+        #box {
+            top: 50%;
+            left: 50%;
+            width: 20rem;
+            height: 20rem;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 2rem #00000015;
+            overflow: hidden;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transform-origin: 0;
+        }
+
+        #box::after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #ee88aa, #ddeeff00 80%, #ffffff80);
+            content: '';
+            display: block;
+            pointer-events: none;
+            position: absolute;
+            z-index: -1;
+        }
+
+        #box > .wave {
+            bottom: 20%;
+            left: 50%;
+            width: 200%;
+            aspect-ratio: 1/1;
+            animation-name: animation-wave;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            border-radius: 43%;
+            pointer-events: none;
+            position: absolute;
+            transform: translateX(-50%);
+            transform-origin: 0;
+            z-index: -2;
+        }
+
+        /* animation-duration 값은 파도 효과를 위해 다소 무작위적으로 가지고갈 필요가 있고 각 wave 마다 다르게 설정하여야 함 */
+        #box > .wave:nth-of-type(1) {
+            animation-duration: 5555ms;
+            background-color: #00aaff;
+            opacity: 0.4;
+        }
+
+        #box > .wave:nth-of-type(2) {
+            animation-duration: 123456ms;
+            background-color: #faf015;
+            opacity: 0.2;
+        }
+
+        #box > .wave:nth-of-type(3) {
+            animation-duration: 7890ms;
+            background-color: #00aaff;
+            opacity: 0.4;
+        }
+
+        #box > .caption {
+            top: 50%;
+            left: 50%;
+            color: #ffffff;
+            cursor: default;
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-size: 3rem;
+            font-style: normal;
+            letter-spacing: 0.5rem;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            user-select: none;
+        }
+
+        /* border-radius 값은 파도 효과를 위해 다소 무작위적으로 가지고갈 필요가 있음 */
+        @keyframes animation-wave {
+            0% {
+                border-radius: 43%;
+                transform: rotateZ(0deg) translateX(-50%);
+            }
+
+            25% {
+                border-radius: 37%;
+            }
+
+            50%{
+                border-radius: 41%;
+            }
+
+            75% {
+                border-radius: 36%;
+            }
+
+            100% {
+                border-radius: 43%;
+                transform: rotateZ(360deg) translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="caption">HELLO</div>
+</div>
+<script>
+    const MAX_ROTATE_DEG = 10; // 회전시킬 수 있는 최대 각도 정의(10도)
+    const $box = document.getElementById('box');
+    document.body.addEventListener('mousemove', (e) => {
+        // body 태그에서 마우스 커서가 움직일때 해당 마우스 커서의 위치를 문서 크기로 나누어 백분율로 계산하여 rotate 시킬 각도로 환산
+        const xPct = e.x / document.documentElement.clientWidth;
+        const yPct = e.y / document.documentElement.clientHeight;
+        const yDeg = (xPct - 0.5) * 2 * MAX_ROTATE_DEG;
+        const xDeg = (yPct - 0.5) * 2 * MAX_ROTATE_DEG;
+        $box.style.transform = `rotateX(${-xDeg}deg) rotateY(${yDeg}deg) translate(-50%, -50%)`;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+create schema `study_0324`;
+
+create table `study_0324`.`reviews`
+(
+    `index`         int unsigned not null,
+    `user-nickname` varchar(10)  not null,
+    `written_at`    datetime     not null,
+    `score`         tinyint      not null,
+    `content`       varchar(100) not null
+);
+
+insert into `study_0324`.`reviews`
+values (1, '헬양', '2025-03-24 13:16:11', 5, '오랜만에 아주 잘먹었습니다:)');
+insert into `study_0324`.`reviews`
+values (2, '솔직함', '2025-03-24 14:52:36', 2, '소스 많이 부탁드렸는데 아주 들이부으셨나봐요?');
+insert into `study_0324`.`reviews`
+values (3, '도선', '2025-03-24 15:11:58', 4, '주문하고 15분도안 돼서 도착했네요');
+insert into `study_0324`.`reviews`
+values (4, '밍미잉', '2025-03-24 17:51:31', 1, '그냥 먹긴 했지만... 위트 시켰는데 플랫브래드 왔네요...');
+insert into `study_0324`.`reviews`
+values (5, '동구라밍', '2025-03-24 11:22:33', 3, '맛있습니다!');
+
+select `index`                                                as 번호,
+       `user-nickname`                                        as 작성자,
+       date(`written_at`)                                     as 작성날짜,
+       time(`written_at`)                                     as 작성시간,
+       concat(repeat('★', `score`), repeat('☆', 5 - `score`)) as 평점,
+       if(char_length(`content`) > 15,
+          concat(substr(`content`, 1, 15), '...'),
+          substr(`content`, 1, 15))                           as 내용
+from `study_0324`.`reviews`
+order by `index` desc;
+
+
+create table `study_0324`.`tel_companies`
+(
+    `code` varchar(5)  not null,
+    `name` varchar(25) not null,
+    constraint primary key (`code`)
+);
+
+
+create table `study_0324`.`users`
+(
+    `id`               varchar(25)  not null,
+    `password`         varchar(255) not null,
+    `nickname`         varchar(10)  not null,
+    `tel_company_code` varchar(5)   not null,
+    `tel`              varchar(12)  not null,
+    `gender`           varchar(1)   not null,
+    constraint primary key (`id`),
+    constraint unique key (`nickname`),
+    constraint unique key (`tel`),
+    constraint foreign key (`tel_company_code`) references `study_0324`.`tel_companies` (`code`),
+    constraint check (`gender` in ('F', 'M'))
+);

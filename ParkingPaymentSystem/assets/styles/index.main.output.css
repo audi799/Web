@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+#main > .output {
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .output.visible {
+    display: flex;
+}
+
+#main > .output > .text-container {
+    margin: 1.5rem 0;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .output > .text-container > .text {
+    font-size: 2.5rem;
+}
+
+#main > .output > .amount {
+    width: 40rem;
+
+    color: black;
+    text-shadow: none;
+
+    background-color: white;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+#main > .output > .amount > .top {
+    width: 100%;
+    padding: 0.6rem;
+
+    box-sizing: border-box;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .output > .amount > .top > .datetime {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#main > .output > .amount > .top > .stretch {
+    flex-grow: 1;
+}
+#main > .output > .amount > .top > .store {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#main > .output > .amount > .center {
+    padding: 0 0.6rem;
+    color: #727272;
+    text-align: right;
+}
+
+#main > .output > .amount > .cost {
+    padding: 0.8rem 0.6rem;
+    text-align: right;
+    font-size: 2rem;
+    color: #c32c2c;
+}
+
+#main > .output > .table {
+    width: 40rem;
+
+    border: 0.0625rem solid white;
+    border-collapse: collapse;
+}
+
+#main > .output > .table th {
+    width: 5rem;
+    height: 2.5rem;
+
+    background-color: #175286;
+
+    border: 0.0625rem solid white;
+    border-collapse: collapse;
+}
+
+#main > .output > .table td {
+    border: 0.0625rem solid white;
+    border-collapse: collapse;
+}
+
+#main > .output > .table .payment.number,
+#main > .output > .table .payment.datetime{
+    width: 18.2rem;
+
+    text-align: center;
+}
+
+#main > .output > .table .payment.name,
+#main > .output > .table .payment.kakao{
+    width: 10rem;
+
+    text-align: center;
+}
+
+#main > .output > .button-container {
+    margin-top: 2.5rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .output > .button-container > button[type="button"] {
+    font-family: inherit;
+
+    width: 10rem;
+    height: 4rem;
+    background-color: transparent;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .output > .button-container > button[type="button"]:active {
+    filter: brightness(80%);
+}
+
+#main > .output > .button-container > button[type="button"] > .icon {
+    height: 2rem;
+}
+
+#main > .output > .button-container > button[type="button"] > .caption {
+    margin-top: 0.2rem;
+
+    font-size: 1rem;
+    font-weight: 300;
+    color: white;
+}

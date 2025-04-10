@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Textify.js 라이브러리 예제</title>
+    <link href="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" type="text/javascript"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            background-color: #205781;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: default;
+            font-size: 3rem;
+            margin: initial;
+            padding-left: 12.5rem;
+            user-select: none;
+
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        body > .introduce {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+
+        body > .introduce > .name {
+            color: #98D2C0;
+            font-size: 4rem;
+        }
+    </style>
+</head>
+<body>
+<span class="welcome" data-textify="welcome">안녕하세요!</span>
+<span class="introduce">
+    <span class="name" data-textify="name">김갑수</span>
+    <span class="suffix" data-textify="suffix">입니다.</span>
+</span>
+<script>
+    // 라이브러리 관련 자세한 사항은 https://textify-js.vercel.app/ 참고!
+
+    new Textify({
+        el: '[data-textify="welcome"]',
+        animation: {
+            delay: 0.5,
+            duration: 1,
+            animateProps: {
+                opacity: 0
+            }
+        }
+    }, gsap);
+
+    new Textify({
+        el: '[data-textify="name"]',
+        animation: {
+            delay: 1.25,
+            duration: 0.75,
+            ease: 'power2',
+            animateProps: {
+                opacity: 0
+            }
+        }
+    }, gsap);
+
+    new Textify({
+        el: '[data-textify="suffix"]',
+        animation: {
+            delay: 1.5,
+            duration: 0.75,
+            animateProps: {
+                opacity: 0
+            }
+        }
+    }, gsap);
+
+    setTimeout(() => location.reload(), 5000);
+</script>
+</body>
+</html>

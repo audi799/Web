@@ -1,0 +1,96 @@
+CREATE SCHEMA `exam`;
+
+CREATE TABLE `exam`.`users`
+(
+    `email`         VARCHAR(50)  NOT NULL,
+    `password`      VARCHAR(128) NOT NULL,
+    `name`          VARCHAR(5)   NOT NULL,
+    `birth`         DATE         NOT NULL,
+    `contact`       VARCHAR(14)  NOT NULL,
+    `gender`        VARCHAR(1)   NOT NULL,
+    `registered_at` DATE         NOT NULL DEFAULT NOW(),
+    CONSTRAINT PRIMARY KEY (`email`),
+    CONSTRAINT UNIQUE KEY (`contact`),
+    CONSTRAINT CHECK (`gender` IN ('F', 'M'))
+);
+
+INSERT INTO `exam`.`users`
+VALUES ('by0dzf@sample.com', 'lyosnhb75t', '허범호', '1987-11-17', '010-5517-0i2m', 'M', '2023-08-17'),
+       ('ubg8cd@sample.com', 'ecrq861xhi', '박원태', '2000-04-12', '010-1906-ezjx', 'M', '2023-09-12'),
+       ('jadhb6@sample.com', '8oa0azstky', '홍민석', '1994-01-26', '010-4266-5m23', 'M', '2023-09-13'),
+       ('5v9c4t@sample.com', 'h5bjp0s6eo', '권예빈', '1969-07-25', '010-3370-j0bn', 'F', '2023-11-17'),
+       ('gu3s4s@sample.com', 'g2w8uzhc8f', '성종옥', '1997-09-23', '010-1965-11ve', 'M', '2023-11-18'),
+       ('upif6m@sample.com', '0asck0kfpa', '설규혁', '2004-02-21', '010-9100-vc68', 'M', '2023-11-30'),
+       ('gt81eo@sample.com', 'mn4tu9bk8j', '유상미', '1988-12-21', '010-8289-5f0a', 'F', '2023-12-22'),
+       ('84zf07@sample.com', 'gkym0xs1b1', '추규철', '1961-05-29', '010-5094-4nbk', 'M', '2024-01-02'),
+       ('p9xny3@sample.com', 'vevvzawnob', '풍시준', '2002-08-08', '010-3236-iiem', 'M', '2024-01-10'),
+       ('qtw609@sample.com', 'gb0elc96lt', '봉정아', '1980-10-21', '010-9401-xxa0', 'F', '2024-01-15');
+
+
+CREATE TABLE `exam`.`products`
+(
+    `index`       INT UNSIGNED NOT NULL,
+    `name`        VARCHAR(100) NOT NULL,
+    `price`       INT UNSIGNED NOT NULL,
+    `description` LONGTEXT     NOT NULL,
+    `view`        INT UNSIGNED NOT NULL DEFAULT 0,
+    CONSTRAINT PRIMARY KEY (`index`)
+);
+
+INSERT INTO `exam`.`products`
+VALUES (1, '이름 황성주 박사의 국산콩 두유 무가당 190ml, 64개', 30680, '내 몸을 지키는 힘, 내몸에 맞는 음식과 즐기는 일상, 매일 달라지는 몸을 느껴보세요', 176),
+       (2, '소스담은 쿠즈락 소떡소떡 (냉동) 135g, 20개', 25500, '맛깔난 소떡소떡, 짭조름한 소시지와 쫄깃한 떡이 번갈아가며 꽂혀 있는 소떡소떡이', 13668),
+       (3, '풀무원 잇츠그린 셀러리 주스 150ml, 12개', 30960, '잇츠그린 샐러리, 싱그러움을 오롯이 품은 초록 빛깔 과채주스를 만나보세요.', 31),
+       (4, '곰곰 달달 꿀호떡 700g, 1개', 11520, '아카시아벌꿀분말과 갈색설탕이 듬뿍 들어가 달콤하고 향긋해요.', 8891),
+       (5, '동원 라이트 스탠다드 참치 85g, 8개', 11880, '바로먹는 영양 동원참치! 단백질이 풍부하고 건강에 좋은 셀레늄, 오메가-3등이 함유되어있는 동원참치입니다.', 10031);
+
+CREATE TABLE `exam`.`order_statuses`
+(
+    `code` VARCHAR(10) NOT NULL,
+    `text` VARCHAR(50) NOT NULL,
+    CONSTRAINT PRIMARY KEY (`code`)
+);
+
+INSERT INTO `exam`.`order_statuses`
+VALUES ('PENDING', '결제 완료'),
+       ('PREPARING', '상품 준비중'),
+       ('SENT', '발송 완료'),
+       ('SENDING', '배송중'),
+       ('DONE', '배송 완료'),
+       ('REFUND_REQ', '환불 접수'),
+       ('REFUND_SND', '환불 배송중'),
+       ('REFUND_DON', '환불 완료');
+
+CREATE TABLE `exam`.`orders`
+(
+    `index`             INT UNSIGNED NOT NULL,
+    `user_email`        VARCHAR(50)  NOT NULL,
+    `product_index`     INT UNSIGNED NOT NULL,
+    `order_status_code` VARCHAR(10)  NOT NULL,
+    `quantity`          INT UNSIGNED NOT NULL,
+    `ordered_at`        DATETIME     NOT NULL DEFAULT NOW(),
+    CONSTRAINT PRIMARY KEY (`index`),
+    CONSTRAINT FOREIGN KEY (`user_email`) REFERENCES `exam`.`users` (`email`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (`product_index`) REFERENCES `exam`.`products` (`index`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (`order_status_code`) REFERENCES `exam`.`order_statuses` (`code`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    CONSTRAINT CHECK (`quantity` > 0)
+);
+
+INSERT INTO `exam`.`orders`
+VALUES (1, 'by0dzf@sample.com', 2, 'DONE', 2, '2023-09-01 11:37:28'),
+       (2, 'jadhb6@sample.com', 2, 'DONE', 1, '2023-09-03 16:41:07'),
+       (3, '5v9c4t@sample.com', 4, 'DONE', 2, '2023-11-20 22:10:17'),
+       (4, '5v9c4t@sample.com', 2, 'DONE', 1, '2023-11-21 09:01:56'),
+       (5, 'ubg8cd@sample.com', 1, 'DONE', 1, '2023-11-21 13:19:37'),
+       (6, 'gt81eo@sample.com', 5, 'DONE', 1, '2023-12-30 15:00:01'),
+       (7, 'gt81eo@sample.com', 2, 'DONE', 1, '2024-01-02 09:11:26'),
+       (8, 'p9xny3@sample.com', 4, 'SENT', 2, '2024-01-15 13:00:04'),
+       (9, '84zf07@sample.com', 3, 'PREPARING', 1, '2024-01-15 14:01:27'),
+       (10, 'qtw609@sample.com', 3, 'PENDING', 1, '2024-01-15 14:02:30');
+

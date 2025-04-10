@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+#header > .menu {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#header > .menu > .title {
+    font-size: 2rem;
+    font-weight: 1000;
+
+    background-color: #ffffff;
+    border: none;
+}
+
+#header > .menu > .title:hover {
+    cursor: pointer;
+    color: #1e73be;
+}
+
+#header > .menu > .list {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#header > .menu > .list > .item > a {
+    font-size: 1rem;
+}
+
+#header > .menu > .list > .item > a:hover {
+    cursor: pointer;
+    color: #1e73be;
+}
+
+#header > .small-menu {
+    display: none;
+}
+
+/* 아래서부턴 스크린사이즈에따라 가변적이어야할 요소들 정의 */
+@media screen and (max-width: 60rem) {
+    #header > .menu {
+        margin: 0 3rem;
+
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    #header > .menu > .list {
+        display: none;
+    }
+
+    #header > .small-menu {
+        padding-top: 0.8rem;
+        margin-top: 0.3rem;
+        border-top: 0.1rem #8c8c8c solid;
+        display: block;
+    }
+
+    #header > .small-menu > .list {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    #header > .small-menu > .list > .item > a:hover {
+        cursor: pointer;
+        color: #1e73be;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 50rem) {
+    #header > .menu > .title {
+        font-size: 1.7rem;
+    }
+
+    #header > .small-menu {
+        padding-top: 0.3rem;
+        margin-top: 0.3rem;
+    }
+
+    #header > .small-menu > .list > .item > a {
+        font-size: 0.8rem;
+    }
+
+    #header > .small-menu > .list > .item > a:hover {
+        cursor: pointer;
+        color: #1e73be;
+        font-size: 0.8rem;
+    }
+}

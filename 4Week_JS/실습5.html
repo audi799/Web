@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 매개 변수로 a와 b를 전달 받아 두 수 중 더 큰 수를 반환하는 함수 max 를 만드세요
+        // 단, a와 b 는 -1억이상 1억이하 범위의 실수이고 이외 범위의 수는 고려하지 않아도 좋습니다.
+        // max(3, 7); // 7
+        // max(-5, -3); // -3
+        // max(0, 0); //0
+
+        // 2. 매개 변수로 nums를 전달 받아 이가 가지는 인자 중 가장 큰 수를 반환하는 함수 findMax를 만드세요
+        // 단, nums는 -1억이상 1억이하 범위의 실수를 1개 이상 인자로 가지는 배열이고 이외 범위의 수는 고려하지 않아도 좋습니다.
+        // findMax([7, -7, 3, 3,14, 0]); // 7
+
+        // 3. 매개 변수로 nums를 전달 받아 이가 가지는 인자 중 숫자인 인자만을 인자로 가지는 배열을 반환하는 함수 filterNumbers를 만드세요.
+        // 단, nums는 무작위 타입의 값을 1개 이상 인자로 가지는 배열이나 NaN, Infinity, -Infinity는 가지지 않는 것으로 합니다.
+        // filterNumber(['55', 3.14, 3, false]); // [3.14, 3]
+
+        // 4. 매개변수로 num을 전달 받아 이가 소수(Prime Number)인가의 여부를 반환하는 isPrime 함수를 만드세요.
+        // 단, num은 2이상의 자연수이고 이외 범위의 수는 고려하지 않아도 좋습니다. (소수는 어떠한 자연수 x를 나누어 떨어지게 할수있는 자연수가 1과 x 밖에 없는 수를 의미합니다.)
+        // isPrime(2); // true
+        // isPrime(17); // true
+        // isPrime(27); // false
+
+        // 5. 매개 변수로 pieces를 전달 받아 틱택토(Tic Tac Toe) 게임의 승자를 문자열로 반환하는 findMinner 함수를 만드세요.
+        // pieces는 이게임의 말인 'O' 및 'X' 의 배치 상황을 가지는 2차원 배열이며 아직 배치되지 않은 인자는 undefined로 정의합니다.
+        // 말 판은 반드시 3행 3열이며 그 예시는 아래와 같습니다.
+        // 승자가 아직 없는 경우
+        // [['O', 'X', 'X'], ['X', 'O', undefined], [undefined, 'X', 'X']]
+
+        // 'X'가 승자인 경우 -> 'X' 반환
+        // [['X', 'O', 'X'], ['X', 'O', 'O'], ['X', undefined, 'O']]
+
+        // 'O'가 승자인 경우 -> 'O' 반환
+        // [[undefined, 'X', 'O'], ['X', 'O', 'X'], ['O', 'X', 'X']]
+
+
+        // 1번
+        function max(value1, value2) {
+            if (value1 > value2) {
+                return value1;
+            } else if (value1 < value2) {
+                return value2;
+            } else {
+                return value1;
+            }
+        }
+
+        console.log(max(0, 0));
+
+        // 2번
+        function findMax(nums) {
+            let sortArray = nums.sort().reverse();
+            return sortArray.shift();
+        }
+
+        let array = [7, -7, 3, 3.14, 0];
+        console.log(findMax(array));
+
+        // 3번
+        function filterNumbers(nums) {
+            let array = [];
+            for (let loop = 0; loop <= nums.length; loop++) {
+                if (typeof nums[loop] == 'number') {
+                    array[loop] = nums[loop];
+                }
+            }
+            return array;
+        }
+
+        let array2 = ['55', 3.14, 3, false];
+        let dataArray = filterNumbers(array2);
+        console.log(dataArray.join());
+
+        // 4번
+        function isPrime(num) {
+            let isTrue = false;
+
+            for (let loop = 2; loop <= 9; loop++) {
+                if (loop !== num) {
+                    isTrue = num % loop === 0;
+
+                    if (isTrue) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        console.log(isPrime(27));
+
+        // 5번 강사 답안1
+        function findWinner(pieces) {
+            const size = 3; // 3행 3열의 사이즈임을 정의
+            // 행 검사
+            for (let row = 0; row < size; row++) {
+                const firstCellValue = pieces[row][0]; // 현재 행의 가장 첫번째 칸의 값 정의
+                let matchingCount = 0; // 현재 행의 첫번째 칸의 값과 나머지 칸의 값이 일치하는 개수를 담을 변수
+                for (let col = 1; col < size; col++) {
+                    if (pieces[row][col] !== undefined && pieces[row][col] === firstCellValue) {
+                        matchingCount++; // 첫번째 칸의 값과 나머지 칸의 값이 일치하면 1씩 증가
+                    }
+                }
+                if (matchingCount === size - 1) { // 일치하는 칸의 개수가 (사이즈 - 1)(2)과 같으면 승자인 것으로 판정.
+                    return firstCellValue;
+                }
+            }
+            // 열 검사
+            for (let col = 0; col < size; col++) {
+                const firstCellValue = pieces[0][col];
+                let matchingCount = 0;
+                for (let row = 1; row < size; row++) {
+                    if (pieces[row][col] !== undefined && pieces[row][col] === firstCellValue) {
+                        matchingCount++;
+                    }
+                }
+                if (matchingCount === size - 1) {
+                    return firstCellValue;
+                }
+            }
+            // 대각선 검사(북서-남동 방향)
+            if (pieces[0][0] !== undefined) {
+                const firstCellValue = pieces[0][0]; // 가장 첫번째 행, 가장 첫번째 칸의 값으로 지정
+                let matchingCount = 0;
+                for (let i = 1; i < size; i++) { // i는 1부터 (size - 1)(2)까지 증가
+                    if (pieces[i][i] === firstCellValue) { // 비교하는 칸의 값과 비교. 이때 칸의 좌표는 (1, 1), (2, 2)로 순차 증가함.
+                        matchingCount++;
+                    }
+                }
+                if (matchingCount === size - 1) {
+                    return firstCellValue;
+                }
+            }
+            // 대각선 검사(북동-남서 방향)
+            if (pieces[0][size - 1] !== undefined) {
+                const firstCellValue = pieces[0][size - 1]; // 가장 첫번째 행, 가장 마지막 칸의 값으로 지정. (0, 2)
+                let matchingCount = 0;
+                for (let i = 1; i < size; i++) { // i는 1부터 (size - 1)(2)까지 증가
+                    if (pieces[i][(size - 1) - i] === firstCellValue) { // 비교하는 칸의 값과 비교. 이때 칸의 좌표는 (1, 1), (2, 0)으로, 행은 증가, 열은 감소함.
+                        matchingCount++;
+                    }
+                }
+                if (matchingCount === size - 1) {
+                    return firstCellValue;
+                }
+            }
+            return undefined; // 행, 열, 각 대각선까지 검사하였는데 return을 만나지 못하였다면 승자가 없는 것으로 판단.
+        }
+        /*
+        // 5번 강사답안2
+        function findWinner(pieces) {
+            const size = 3;
+            for (let i = 0; i < size; i++) {
+                // 행 검사
+                if (pieces[i][0] !== undefined && pieces[i].every(cell => cell === pieces[i][0])) { // i 번째 행의 모든 열 값이 i 번째 행의 첫번째 열 값과 같다면
+                    return pieces[i][0]; // 그 행의 첫 값이 승자
+                }
+                // 열 검사
+                if (pieces[0][i] !== undefined && pieces.every(row => row[i] === pieces[0][i])) { // 각 행의 i 번째 열이 첫번째 행의 i 번째 열 값과 같다면
+                    return pieces[0][i]; // 그 열 값이 승자
+                }
+            }
+            // 대각선 검사(북서-남동 방향)
+            if (pieces[0][0] !== undefined && pieces.map((row, i) => row[i]).every((piece, _, map) => piece === map[0])) { // 각 행 번호에 맞는 열 값으로 새로운 배열을 map하여 해당 배열의 모든 인자가 첫번째 배열 값과 일치하면
+                return pieces[0][0]; // 첫번째 행 첫번째 열 값이 승자
+            }
+            // 대각선 검사(북동-남서 방향)
+            if (pieces[0][size - 1] !== undefined && pieces.map((row, i) => row[(size - 1) - i]).every((piece, _, map) => piece === map[0])) { // 각 행 번호에 대해 (size - 1)(2)에서 행 번호를 뺀 열 번호의 값으로 새로운 배열을 map하여 해당 배열의 모든 인자가 첫번째 배열 값과 일치하면
+                return pieces[0][size - 1]; // 첫번째 행 마지막 열 값이 승자
+            }
+            return undefined;
+        }*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

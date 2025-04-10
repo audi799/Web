@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS6</title>
+    <style>
+        .container > .box {
+            width: 12.5rem;
+            aspect-ratio: 4/3;
+            background-color: #273746;
+        }
+
+        /*.container > .box ~ .box {*/
+        /*    border-top: 0.125rem solid red;*/
+        /*}*/
+
+        .container > .box + .box {
+            border-top: 0.125rem solid red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+</body>
+</html>

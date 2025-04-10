@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+#payCover {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #212121a0;
+    display: none;
+    position: fixed;
+    z-index: 2;
+}
+
+#payCover.visible {
+    display: block;
+}
+
+#pay {
+    top: 50%;
+    left: 50%;
+    background-color: #ffffff;
+    display: none;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+#pay.visible {
+    display: flex;
+}
+
+#pay > .title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#pay > .message {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+
+#pay > .subtitle {
+    font-size: 1.25rem;
+}
+
+#pay > .menu {
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.75rem;
+    list-style-type: none;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-inline: 0;
+    padding: 1rem;
+}
+
+#pay > .menu > .item {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+#pay > .menu > .item:not(:last-of-type) {
+    border-bottom: 0.0625rem solid #e0e0e0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#pay > .menu > .item > .stretch {
+    flex-grow: 1;
+}
+
+#pay > .total {
+    background-color: #fafafa;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    margin-top: -0.25rem;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+#pay > .method-container {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#pay > .method-container > .label {
+    border: 0.125rem solid #eeeeee;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+#pay > .method-container > .label:has(> .radio:checked) {
+    background-color: #fafafa;
+    border-color: #757575;
+}
+
+#pay > .method-container > .label > .radio {
+    display: none;
+}
+
+#pay > .method-container > .label > .radio:checked ~ .icon {
+    filter: opacity(1);
+}
+
+#pay > .method-container > .label > .icon {
+    width: 50%;
+    filter: opacity(0.375);
+}
+
+#pay > .button-container {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#pay > .button-container > .button {
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.125rem;
+    padding: 0.75rem;
+}
+
+#pay > .button-container > .button:active {
+    filter: brightness(90%);
+}
+
+#pay > .button-container > .button.cancel {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+#pay > .button-container > .button.confirm {
+    background-color: #28b463;
+    color: #ffffff;
+}

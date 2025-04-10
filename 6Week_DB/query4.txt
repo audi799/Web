@@ -1,0 +1,40 @@
+select `T0`.`country_code`, `T0`.`value`, `T1`.`name_ko`
+from `world`.`areas` `T0`
+         left join `world`.countries `T1`
+                   on `T0`.`country_code` = `T1`.`code`;
+
+select `T0`.`country_code`,
+       `T0`.`as_of`,
+       `T0`.`value`,
+       `T1`.`name_ko`
+from `world`.`populations` `T0`
+         left join `world`.`countries` `T1`
+                   on `T0`.`country_code` = `T1`.`code`
+where T0.as_of = 2023;
+
+select `T0`.`country_code` as `코드`,
+       `T1`.`name_ko`      as `이름`,
+       `T0`.`value`        as `면적`
+from `world`.`areas` `T0`
+         left join `world`.countries `T1`
+                   on `T0`.`country_code` = `T1`.`code`;
+
+-- 서브쿼리 사용
+select `T0`.`country_code`                       as `코드`,
+       (select `T1`.name_ko
+        from `world`.`countries` as `T1`
+        where `T0`.`country_code` = `T1`.`code`) as `이름`,
+       `T0`.`value`                              as `면적`
+from `world`.areas as `T0`;
+
+
+
+select `T0`.`country_code` as `코드`,
+       `T1`.`name_ko`      as `이름`,
+       `T0`.`value`        as `면적`,
+       `T2`.as_of as `년도`
+from `world`.`areas` `T0`
+         left join `world`.countries `T1`
+                   on `T0`.`country_code` = `T1`.`code`
+left join `world`.`populations` `T2`
+on `T2`.country_code = `T0`.`country_code`;

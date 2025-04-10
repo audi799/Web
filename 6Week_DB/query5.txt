@@ -1,0 +1,143 @@
+create schema `school`;
+create table `school`.`scores`
+(
+    `student_grade`  tinyint unsigned not null,
+    `student_class`  tinyint unsigned not null,
+    `student_member` tinyint unsigned not null,
+    `subject_code`   varchar(3)       not null,
+    `value`          tinyint unsigned not null,
+    constraint primary key (`student_grade`, `student_class`, `student_member`, `subject_code`),
+    constraint foreign key (`student_grade`, `student_class`, `student_member`) references `school`.`students` (`grade`, `class`, number)
+        on delete CASCADE
+        on update cascade,
+    constraint foreign key (`subject_code`) references `school`.`subject` (`code`)
+        on delete CASCADE
+        on update cascade,
+    constraint check (`value` between 0 and 100)
+);
+
+create table `school`.`students`
+(
+    `grade`   tinyint unsigned not null,
+    `class`   tinyint unsigned not null,
+    `number`  tinyint unsigned not null,
+    `name`    varchar(10)      not null,
+    `gender`  varchar(1)       not null,
+    `contact` varchar(12)      not null,
+    constraint primary key (`grade`, `class`, `number`),
+    constraint check (`gender` in ('F', 'M')),
+    constraint unique key (`contact`)
+);
+
+create table `school`.`subject`
+(
+    `code` varchar(3)  not null,
+    `text` varchar(10) not null,
+    constraint primary key (`code`)
+);
+
+insert into `school`.`scores`
+values (1, 1, 1, 'ENG', 84);
+insert into `school`.`scores`
+values (1, 1, 1, 'KOR', 6);
+insert into `school`.`scores`
+values (1, 1, 1, 'MTH', 95);
+insert into `school`.`scores`
+values (1, 1, 2, 'ENG', 61);
+insert into `school`.`scores`
+values (1, 1, 2, 'KOR', 10);
+insert into `school`.`scores`
+values (1, 1, 2, 'MTH', 95);
+insert into `school`.`scores`
+values (1, 1, 3, 'ENG', 67);
+insert into `school`.`scores`
+values (1, 1, 3, 'KOR', 30);
+insert into `school`.`scores`
+values (1, 1, 3, 'MTH', 46);
+insert into `school`.`scores`
+values (1, 2, 1, 'ENG', 45);
+insert into `school`.`scores`
+values (1, 2, 1, 'KOR', 36);
+insert into `school`.`scores`
+values (1, 2, 1, 'MTH', 21);
+insert into `school`.`scores`
+values (1, 2, 2, 'ENG', 72);
+insert into `school`.`scores`
+values (1, 2, 2, 'KOR', 80);
+insert into `school`.`scores`
+values (1, 2, 2, 'MTH', 38);
+insert into `school`.`scores`
+values (1, 2, 3, 'ENG', 18);
+insert into `school`.`scores`
+values (1, 2, 3, 'KOR', 54);
+insert into `school`.`scores`
+values (1, 2, 3, 'MTH', 67);
+insert into `school`.`scores`
+values (1, 3, 1, 'ENG', 22);
+insert into `school`.`scores`
+values (1, 3, 1, 'KOR', 70);
+insert into `school`.`scores`
+values (1, 3, 1, 'MTH', 74);
+insert into `school`.`scores`
+values (1, 3, 2, 'ENG', 99);
+insert into `school`.`scores`
+values (1, 3, 2, 'KOR', 73);
+insert into `school`.`scores`
+values (1, 3, 2, 'MTH', 21);
+insert into `school`.`scores`
+values (1, 3, 3, 'ENG', 6);
+insert into `school`.`scores`
+values (1, 3, 3, 'KOR', 87);
+insert into `school`.`scores`
+values (1, 3, 3, 'MTH', 92);
+
+insert into `school`.`students`
+values (1, 1, 1, '양한길', 'M', 01000000111);
+insert into `school`.`students`
+values (1, 1, 2, '봉세윤', 'M', 01000000112);
+insert into `school`.`students`
+values (1, 1, 3, '양종혁', 'M', 01000000113);
+insert into `school`.`students`
+values (1, 2, 1, '홍한빈', 'F', 01000000121);
+insert into `school`.`students`
+values (1, 2, 2, '한성태', 'M', 01000000122);
+insert into `school`.`students`
+values (1, 2, 3, '손용환', 'M', 01000000123);
+insert into `school`.`students`
+values (1, 3, 1, '최인태', 'M', 01000000131);
+insert into `school`.`students`
+values (1, 3, 2, '장도희', 'F', 01000000132);
+insert into `school`.`students`
+values (1, 3, 3, '사공한결', 'F', 01000000133);
+
+insert into `school`.`subject`
+values ('ENG', '영어');
+insert into `school`.`subject`
+values ('KOR', '국어');
+insert into `school`.`subject`
+values ('MTH', '수학');
+
+
+select *
+from `school`.subject;
+
+select *
+from `school`.students;
+
+select *
+from `school`.scores;
+
+select concat_ws('-',T0.grade,T0.class,T0.number) as 학생,
+       T0.name as 이름,
+       if(T0.gender = 'M', '남', '여') as 성별,
+       concat_ws('-', concat('0', substr(T0.contact, 1, 2)), substr(T0.contact, 3, 4), substr(T0.contact, 7, 4)) as 연락처,
+       T2.text as 과목,
+       T1.value as 점수
+from `school`.`students` `T0`
+         left join `school`.`scores` `T1`
+                   on `T1`.student_grade = `T0`.grade
+                       and `T1`.student_class = `T0`.class
+                       and `T1`.student_member = `T0`.number
+         left join `school`.`subject` `T2`
+                   on `T2`.code = `T1`.subject_code
+order by T0.grade, T0.class, T0.number

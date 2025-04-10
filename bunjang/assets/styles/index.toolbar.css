@@ -1,0 +1,51 @@
+#toolbar {
+    border-bottom: 0.0625rem solid #eeeeee;
+}
+
+#toolbar > .layout-content {
+    padding: 0.66rem 0;
+}
+
+#toolbar > .layout-content > .menu {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+#toolbar > .layout-content > .menu > .stretch {
+    flex-grow: 1;
+}
+
+#toolbar > .layout-content > .menu > .item > .item {
+    cursor: pointer;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.325rem;
+    justify-content: center;
+}
+
+#toolbar > .layout-content > .menu > .item > .item > .icon {
+    height: 1rem;
+}
+
+#toolbar > .layout-content > .menu > .item > .item > .icon[src$="favicon.ico"] {
+    transform: scale(90%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

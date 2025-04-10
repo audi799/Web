@@ -1,0 +1,855 @@
+@charset "UTF-8";
+
+#main > .home {
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+
+#main > .home > .background {
+    width: 100%;
+    height: 35rem;
+}
+
+#main > .home > .title-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+}
+
+#main > .home > .title-container > .box {
+    width: 4rem;
+    height: 0.2rem;
+
+    margin-bottom: 2rem;
+
+    background-color: white;
+    box-shadow: 0.15rem 0.15rem 0 #2a72b0;
+}
+
+#main > .home > .title-container > .name-container {
+    margin-bottom: 2rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .home > .title-container > .name-container > .korea {
+    margin: 0 1.5rem 0 0;
+
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 650;
+    text-shadow: 0.15rem 0.15rem 0 #2a72b0;
+    letter-spacing: 1rem;
+}
+
+#main > .home > .title-container > .name-container > .english {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#main > .home > .title-container > .name-container > .english > .name {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 650;
+    text-shadow: 0.15rem 0.15rem 0 #2a72b0;
+    letter-spacing: 0.8rem;
+}
+
+#main > .home > .title-container > .title {
+    margin: 0 0 3rem 0;
+
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 650;
+    text-shadow: 0.15rem 0.15rem 0 #2a72b0;
+    letter-spacing: 0.5rem;
+}
+
+#main > .home > .title-container > .introduce {
+    margin: 0.2rem 0;
+
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-shadow: 0.15rem 0.15rem 0 #2a72b0;
+    letter-spacing: 0.4rem;
+}
+
+#main > .home > .title-container > .introduce > .word-point {
+    font-size: 1.2rem;
+    font-weight: 450;
+}
+
+#main > .about-me {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .about-me > .title {
+    margin: 7rem 0 5rem 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .about-me > .title > .icon {
+    height: 2rem;
+}
+
+#main > .about-me > .title > .caption {
+    margin-left: 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0.1rem 0.1rem 0 #8c8c8c;
+}
+
+#main > .about-me > .description {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20vw;
+}
+
+#main > .about-me > .description > .content-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4vh;
+}
+
+#main > .about-me > .description > .content-container > .content-box {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .about-me > .description > .content-container > .content-box > .icon {
+    height: 3rem;
+
+    margin-right: 1rem;
+
+    border-radius: 1rem;
+    background-color: #dedddd;
+}
+
+#main > .about-me > .description > .content-container > .content-box > .caption {
+    color: #00000098;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+#main > .about-me > .description > .content-container > .content-box > .address {
+    color: #00000098;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+#main > .about-me > .description > .content-container > .content-box > .address:hover {
+    color: #000000;
+}
+
+#main > .skills {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .skills > .title {
+    margin: 12rem 0 3rem 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .skills > .title > .icon {
+    height: 2rem;
+}
+
+#main > .skills > .title > .caption {
+    margin-left: 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0.1rem 0.1rem 0 #8c8c8c;
+}
+
+#main > .skills > .language,
+#main > .skills > .ide {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #000000;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .skills > .language > .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .skills > .language > .container > .icon {
+    width: 11rem;
+    height: 7rem;
+
+    margin-bottom: 1.5rem;
+}
+
+#main > .skills > .language > .container > .caption {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 200;
+    text-shadow: 0.08rem 0.08rem 0 #8c8c8c;
+}
+
+#main > .skills > .language > .container > .caption.web {
+    word-spacing: 1.2rem;
+}
+
+#main > .skills > .ide > .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .skills > .ide > .container > .icon {
+    margin-bottom: 1.5rem;
+
+    width: 11rem;
+    height: 9rem;
+}
+
+#main > .skills > .ide > .container > .caption {
+    font-weight: 300;
+    text-shadow: 0.05rem 0.05rem 0 #8c8c8c;
+}
+
+#main > .skills > .database {
+    padding: 1.5rem;
+    margin: 0 5rem;
+
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #000000;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .skills > .database > .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .skills > .database > .container > .icon {
+    width: 11rem;
+    height: 6.5rem;
+
+    margin-bottom: 1.5rem;
+}
+
+#main > .skills > .database > .container > .caption {
+    font-weight: 300;
+    text-shadow: 0.05rem 0.05rem 0 #8c8c8c;
+}
+
+#main > .strength {
+    width: 100%;
+
+    margin-top: 5rem;
+    padding-bottom: 8rem;
+    background-color: #000000;
+    box-shadow: 0 0.1rem 1rem #000000;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .strength > .title {
+    margin: 6rem 0 3rem 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .strength > .title > .icon {
+    height: 2rem;
+
+    filter: invert(100%);
+}
+
+#main > .strength > .title > .caption {
+    margin-left: 0.5rem;
+
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0.1rem 0.1rem 0 #8c8c8c;
+}
+
+#main > .strength > .introduce-myself {
+    width: 90%;
+
+    margin-bottom: 4rem;
+    padding: 1rem;
+
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+
+    background-color: #eaeaea;
+    border-radius: 1rem;
+    outline: 0.15rem solid #2390ef;
+}
+
+#main > .strength > .image-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+}
+
+#main > .strength > .image-container > .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+
+#main > .strength > .image-container > .container > .image {
+    width: 16rem;
+    height: 20rem;
+
+    border-radius: 1rem;
+    outline: 0.15rem solid #2390ef;
+    filter: brightness(60%);
+}
+
+#main > .strength > .image-container > .container > .caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #ffffff;
+    font-size: 3rem;
+    text-shadow: 0.15rem 0.15rem 0 #000000;
+    letter-spacing: 1rem;
+    white-space: nowrap;
+
+    position: absolute;
+}
+
+#main > .projects {
+    margin-bottom: 2rem;
+}
+
+#main > .projects > .title {
+    margin: 6rem 0 3rem 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .projects > .title > .icon {
+    height: 2rem;
+}
+
+#main > .projects > .title > .caption {
+    margin-left: 0.5rem;
+
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0.1rem 0.1rem 0 #8c8c8c;
+}
+
+#main > .projects > .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+}
+
+#main > .projects > .container > .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .projects > .container > .content > .image-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .projects > .container > .content > .image-container > .image {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+    height: 24.5rem;
+
+    border-radius: 1rem;
+    outline: 0.15rem solid #2390ef;
+}
+
+#main > .projects > .container > .content > .description-container {
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .projects > .container > .content > .description-container > .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#main > .projects > .container > .content > .description-container > .description {
+    margin-bottom: 1rem;
+
+    color: #494949;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#main > .projects > .container > .content > .description-container > .detail-container {
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .projects > .container > .content > .description-container > .detail-container > .subject {
+    padding-left: 2rem;
+
+    width: 100%;
+
+    color: #9b9b9b;
+    font-size: 1rem;
+    font-weight: 300;
+    text-shadow: 0.05rem 0.05rem 0 #2a72b0;
+    text-align: left;
+}
+
+#main > .projects > .container > .content > .description-container > .detail-container > .detail {
+    padding-right: 2rem;
+
+    width: 100%;
+
+    color: #9b9b9b;
+    font-size: 1rem;
+    font-weight: 300;
+    text-shadow: 0.05rem 0.05rem 0 #2a72b0;
+    text-align: right;
+}
+
+#main > .career {
+    width: 95%;
+    margin-bottom: 2rem;
+}
+
+#main > .career > .title {
+    margin: 6rem 0 3rem 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .career > .title > .icon {
+    height: 2rem;
+}
+
+#main > .career > .title > .caption {
+    margin-left: 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0.1rem 0.1rem 0 #8c8c8c;
+}
+
+#main > .career > .history {
+    padding: 1rem;
+
+    border-radius: 1rem;
+    background-color: #eaeaea;
+    outline: 0.15rem solid #000000;
+
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .career > .history > .current {
+    padding-bottom: 2rem;
+
+    width: 100%;
+
+    border-bottom: 0.12rem solid #000000;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .career > .history > .corporation {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .career > .history > .corporation > .icon,
+#main > .career > .history > .current > .icon {
+    margin-right: 1rem;
+
+    height: 6rem;
+}
+
+#main > .career > .history > .corporation > .workplace,
+#main > .career > .history > .current > .workplace {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .career > .history > .corporation > .workplace > .title,
+#main > .career > .history > .current > .workplace > .title {
+    margin-bottom: 0.5rem;
+
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#main > .career > .history > .corporation > .workplace > .period,
+#main > .career > .history > .corporation > .workplace > .position,
+#main > .career > .history > .current > .workplace > .period,
+#main > .career > .history > .current > .workplace > .position {
+    color: #636363;
+    font-size: 1rem;
+}
+
+#main > .career > .history > .introduction {
+    margin-bottom: 1rem;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#main > .career > .history > .task {
+    margin-bottom: 0.5rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .career > .history > .task > .point {
+    margin-right: 0.4rem;
+
+    width: 0.3rem;
+    height: 0.3rem;
+
+    border-radius: 999rem;
+    background-color: #00000080;
+}
+
+#main > .career > .history > .task > .text {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* 아래서부턴 스크린사이즈에따라 가변적이어야할 요소들 정의 */
+@media screen and (max-width: 65rem) {
+    /* skills */
+    #main > .skills > .language,
+    #main > .skills > .ide {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* strength */
+    #main > .strength > .image-container > .container > .image {
+        width: 13.5rem;
+        height: 18rem;
+    }
+
+    #main > .strength > .image-container > .container > .caption {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 55rem) {
+    /* home */
+    #main > .home > .background {
+        height: 28rem;
+    }
+
+    #main > .home > .title-container > .name-container > .korea {
+        font-size: 3.2rem;
+        font-weight: 550;
+        white-space: nowrap;
+    }
+
+    #main > .home > .title-container > .name-container > .english > .name {
+        font-size: 1rem;
+        font-weight: 550;
+    }
+
+    #main > .home > .title-container > .title {
+        font-size: 1.3rem;
+        font-weight: 550;
+    }
+
+    #main > .home > .title-container > .introduce {
+        font-size: 0.9rem;
+        font-weight: 350;
+    }
+
+    #main > .home > .title-container > .introduce > .word-point {
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    #main > .about-me > .title > .icon,
+    #main > .skills > .title > .icon,
+    #main > .strength > .title > .icon,
+    #main > .projects > .title > .icon,
+    #main > .career > .title > .icon {
+        height: 1.5rem;
+    }
+
+    #main > .about-me > .title > .caption,
+    #main > .skills > .title > .caption,
+    #main > .strength > .title > .caption,
+    #main > .projects > .title > .caption,
+    #main > .career > .title > .caption {
+        font-size: 1.3rem;
+        font-weight: 350;
+    }
+
+    /* strength */
+    #main > .strength > .introduce-myself {
+        font-size: 0.85rem;
+    }
+
+    #main > .strength > .image-container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    /* projects */
+    #main > .projects > .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    #main > .projects > .container > .content > .image-container > .image {
+        height: 22rem;
+    }
+
+    #main > .projects > .container > .content > .description-container > .title {
+        font-size: 1.2rem;
+        font-weight: 450;
+    }
+
+    #main > .projects > .container > .content > .description-container > .description {
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+
+    #main > .projects > .container > .content > .description-container > .detail-container > .subject,
+    #main > .projects > .container > .content > .description-container > .detail-container > .detail {
+        font-size: 0.9rem;
+        font-weight: 280;
+    }
+
+    /* career */
+    #main > .career > .history > .current > .icon,
+    #main > .career > .history > .corporation > .icon {
+        height: 5rem;
+    }
+
+    #main > .career > .history > .current > .workplace > .title,
+    #main > .career > .history > .corporation > .workplace > .title {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    #main > .career > .history > .current > .workplace > .period,
+    #main > .career > .history > .corporation > .workplace > .period {
+        font-size: 1rem;
+    }
+
+    #main > .career > .history > .current > .workplace > .position,
+    #main > .career > .history > .corporation > .workplace > .position {
+        font-size: 0.9rem;
+    }
+
+    #main > .career > .history > .introduction {
+        font-size: 1.1rem;
+        font-weight: 550;
+    }
+
+    #main > .career > .history > .task > .text {
+        font-size: 0.95rem;
+        font-weight: 280;
+    }
+}
+
+@media screen and (max-width: 45rem) {
+    /* home */
+    #main > .home > .background {
+        height: 25.5rem;
+    }
+
+    /* about-me */
+    #main > .about-me > .description {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5vw;
+    }
+
+    #main > .about-me > .description > .content-container > .content-box > .icon {
+        height: 2.5rem;
+    }
+
+    #main > .about-me > .description > .content-container > .content-box > .caption {
+        font-size: 0.9rem;
+        font-weight: 450;
+        letter-spacing: 0;
+    }
+
+    /* skills */
+    #main > .skills > .language,
+    #main > .skills > .ide {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #main > .skills > .language > .container,
+    #main > .skills > .ide > .container {
+        margin-bottom: 1rem;
+    }
+
+    #main > .skills > .language > .container > .icon,
+    #main > .skills > .ide > .container > .icon {
+        margin-bottom: 0;
+
+        width: 9.5rem;
+        height: 6.5rem;
+    }
+
+    #main > .skills > .database > .container > .icon {
+        width: 9rem;
+        height: 6rem;
+    }
+
+    /* career */
+    #main > .career > .history > .current > .icon,
+    #main > .career > .history > .corporation > .icon {
+        height: 3.8rem;
+    }
+
+    #main > .career > .history > .current > .workplace > .title,
+    #main > .career > .history > .corporation > .workplace > .title {
+        font-size: 1.3rem;
+        font-weight: 450;
+    }
+
+    #main > .career > .history > .current > .workplace > .period,
+    #main > .career > .history > .corporation > .workplace > .period {
+        font-size: 0.85rem;
+    }
+
+    #main > .career > .history > .current > .workplace > .position,
+    #main > .career > .history > .corporation > .workplace > .position {
+        font-size: 0.85rem;
+    }
+
+    #main > .career > .history > .introduction {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    #main > .career > .history > .task > .text {
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+}

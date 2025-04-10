@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+#main > .container {
+    width: 100%;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#main > .container > .label {
+    margin-top: 1rem;
+    width: 8rem;
+    padding: 0.4rem 0.6rem;
+
+    box-shadow: 0.3rem 0.3rem 0.2rem #8c8c8c;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    background-color: #2c5881;
+
+    color: #ffffff;
+    text-shadow: 0.15rem 0.15rem 0 #000000;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .container > .education-group {
+    margin-top: 0.2rem;
+
+    border: 0.3rem double #2c5881;
+
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#main > .container > .education-group.visible {
+    display: grid;
+}
+
+#main > .container > .education-group > .grid {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#main > .container > .education-group > .grid > .caption {
+    padding: 1rem 2.5rem;
+    border: 0.1rem solid #82a9c4;
+
+    text-align: center;
+}
+
+#main > .container > .education-group > .grid > .caption.title {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0.15rem 0.15rem 0 #000000;
+    background-color: #2c5881;
+}
+
+#main > .container > .label > .check {
+    /*display: none;*/
+}
+
+#main > .container > .career-group {
+    margin-top: 0.2rem;
+
+    border: 0.3rem double #2c5881;
+
+    align-items: flex-start;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#main > .container > .career-group.visible {
+    display: flex;
+}
+
+#main > .container > .career-group > .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#main > .container > .career-group > .grid.career.title {
+    background-color: #2c5881;
+}
+
+#main > .container > .career-group > .grid.career.title > .caption {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0.15rem 0.15rem 0 #000000;
+}
+
+#main > .container > .career-group > .grid.career > .caption {
+    width: 12rem;
+
+    padding: 1rem 0;
+    border: 0.1rem solid #82a9c4;
+    text-align: center;
+}
+
+#main > .container > .career-group > .achievement {
+    width: 100%;
+}
+
+#main > .container > .career-group > .achievement.title {
+    padding: 1rem 0;
+
+    text-align: center;
+    background-color: #2c5881;
+    color: #ffffff;
+    text-shadow: 0.15rem 0.15rem 0 #000000;
+}

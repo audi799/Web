@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTest</title>
+    <style>
+        label {
+            background-color: darkgray;
+            padding: 0.5rem;
+            display: inline-block;
+        }
+
+        iframe {
+            display: none;
+        }
+
+        div:has(input[data-value="daegu"]:checked) + iframe[data-value="daegu"] {
+            display: block;
+        }
+
+        /*.container:has(input[data-value="daegu"]:checked) ~ .wrapper-container > iframe[data-value="daegu"] {*/
+        /*    display: block;*/
+        /*}*/
+
+        /*.container:has(input[data-value="tokyo"]:checked) ~ .wrapper-container > iframe[data-value="tokyo"] {*/
+        /*    display: block;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <label>
+        <span>대구</span>
+        <input checked type="radio" name="tab" data-value="daegu">
+    </label>
+    <label>
+        <span>도쿄</span>
+        <input type="radio" name="tab" data-value="tokyo">
+    </label>
+</div>
+
+<div class="wrapper-container">
+    <iframe class="content"
+            data-value="daegu"
+            src="https://api.wo-cloud.com/content/widget/?geoObjectKey=10890338&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
+            name="CW2" scrolling="no" width="290" height="318" frameborder="0"
+            style="border: 1px solid #10658E;border-radius: 8px"></iframe>
+    <iframe class="content"
+            data-value="tokyo"
+            src="https://api.wo-cloud.com/content/widget/?geoObjectKey=14249651&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
+            name="CW2" scrolling="no" width="290" height="318" frameborder="0"
+            style="border: 1px solid #10658E;border-radius: 8px"></iframe>
+</div>
+
+</body>
+</html>

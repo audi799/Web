@@ -1,0 +1,77 @@
+create table `study_0302`.`populations`
+(
+    `city`  varchar(5),
+    `value` int unsigned
+);
+
+show tables in `study_0302`;
+
+DESC `study_0302`.`articles`;
+
+# unsigned 가급적으로 사용하지않길 권장. java 와 연동할때 타입 안맞는 문제 발생(java 에선 unsigned 대응되는 게 없다)
+create table `study_0302`.`articles`
+(
+    `index`      int,
+    `title`      varchar(100),
+    `content`    text(10000),
+    `writer`     varchar(20),
+    `view`       int,
+    `written_at` datetime,
+    `is_deleted` boolean
+);
+
+ALTER TABLE `study_0302`.`articles`
+    ADD COLUMN `is_modified` boolean;
+ALTER TABLE `study_0302`.`articles`
+    ADD COLUMN `board_id` varchar(10) after `index`;
+# ALTER TABLE `study_0302`.`articles` ADD COLUMN `board_id` varchar(10) first; 가장 앞자리
+alter table `study_0302`.`articles`
+    modify column `content` varchar(15000);
+ALTER TABLE `study_0302`.`articles`
+    MODIFY COLUMN `title` VARCHAR(100) AFTER `index`;
+
+create schema `study_0321`;
+create table `study_0321`.`users`
+(
+    `id`                  varchar(20)  not null,
+    `password`            varchar(255) not null,
+    `nickname`            varchar(10)  not null,
+    `name`                varchar(5)   not null,
+    `gender`              varchar(1)   not null,
+    `contact`             varchar(12)  not null,
+    `birth`               date         not null,
+    `created_at`          datetime     not null,
+    `modified_at`         datetime,
+    `is_term_agree`       boolean      not null,
+    `is_marketing_agreed` boolean      not null,
+    `is_admin`            boolean      not null,
+    `is_suspended`        boolean      not null,
+    `is_deleted`          boolean      not null
+);
+
+alter table `study_0321`.`users` add COLUMN `email` varchar(50) not null after `password`;
+alter table `study_0321`.`users` drop COLUMN `is_term_agree`;
+alter table `study_0321`.`users` add COLUMN `term_agree_at` date not null after `modified_at`;
+alter table `study_0321`.`users` drop COLUMN `is_marketing_agreed`;
+alter table `study_0321`.`users` add COLUMN `marketing_agreed_at` date after `term_agree_at`;
+
+INSERT INTO `study_0302`.`populations` (`CITY`, `VALUE`)
+VALUES ('대구', 250);
+
+INSERT INTO `study_0302`.`populations`
+VALUES ('대구', 250),
+       ('대전', 200),
+       ('서울', 900);
+
+SELECT *
+FROM `study_0302`.`populations`
+WHERE city = '대구'
+AND value = 250;
+
+UPDATE `study_0302`.`populations`
+SET `city` = '대구광역시',
+    `value` = 250
+WHERE `city` = '대구';
+
+DELETE
+FROM `study_0302`.`populations`

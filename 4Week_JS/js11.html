@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.invalid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form id="loginForm">
+    <label>
+        <input name="em" type="text">
+    </label>
+    <label>
+        <input name="=pw" type="password">
+    </label>
+</form>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+    loginForm['em'].classList.add('invalid');
+    loginForm['em'].style.backgroundColor = 'blue';
+    loginForm['em'].style.padding = '2rem';
+    loginForm.dataset['cachedEmail'] ='admin@sample.com'; // html 태그보면 data-cached-email 추가되어있게됨.
+
+    const button = document.createElement('button');
+    button.innerText = '로그인';
+    loginForm.append(button); // append로 마지막에 써서 그려지도록하는게 퍼포먼스에 좋다!
+
+    const title = document.createElement('h1');
+    title.innerText = '로그인';
+    loginForm.prepend(title);
+
+    let em = loginForm.querySelector('input[name="em"]'); //해당 인자 만족하는 가장 첫번째 것을 가지고옴
+    let inputs = loginForm.querySelectorAll('input'); // 해당 인자를 만족하는 모두를 가져옴.
+    for (const input of inputs) {
+        console.log(input);
+    }
+
+</script>
+
+</body>
+</html>

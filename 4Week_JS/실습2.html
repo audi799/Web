@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js6</title>
+    <script>
+        const subjectMap = {ENG: '영어', KOR: '국어', MTH: '수학'};
+        let scoreMap = {
+            '이다현': {
+                ENG: 78,
+                KOR: 81,
+                MTH: 100
+            },
+            '윤종혁': {
+                ENG: 82,
+                KOR: 91,
+                MTH: 53
+            },
+            '조성우': {
+                ENG: 23,
+                KOR: 33,
+                MTH: 8
+            },
+        };
+
+        // 위 scoreMap이 가지는 키와 값이 각각 학생의 이름과 각 과목과 점수에 대한 오브젝트라고 했을 때, 과목별 평균 점수를 구하여 출력하세요.
+        // ===정답===
+        // 영어: 61
+        // 국어: 69
+        // 수학: 54
+
+        const subjects = Object.keys(subjectMap);
+        // 과목 키를 인자로 가지는 배열 ['ENG', 'KOR', 'MTH']
+        const averageMap = {};
+        // 과목별 평균 점수를 가질 오브젝트 생성
+        subjects.forEach((subject) => averageMap[subject] = 0);
+        // 각 과목별 점수 합계를 0점으로 초기화. 현재상태: {ENG: 0, KOR: 0, MTH: 0}
+        Object.values(scoreMap).forEach((scoreObject) => {
+            //scoreMap 이 가지는 값 반복 (이름은 필요 없으므로)
+            // 여기서 scoreObject는 각 학생의 영, 국, 수 성적을 가진 오브젝트
+            subjects.forEach((subject) => {
+                averageMap[subject] = averageMap[subject] + scoreObject[subject];
+                //과목별 평균에 각 학생의 점수 합
+            })
+        })
+        const numOfStudents = Object.keys(scoreMap).length;
+        //학생수
+        subjects.forEach((subject) => {
+            averageMap[subject] = averageMap[subject] / numOfStudents;
+            console.log(`${subjectMap[subject]}: ${averageMap[subject]}`)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+

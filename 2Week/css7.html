@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS7</title>
+    <style>
+        /*span:hover {*/
+        /*    background-color: black;*/
+        /*    color: yellow;*/
+        /*}*/
+
+        /*span:active {*/
+        /*    color: red;*/
+        /*}*/
+
+        form > label > input[name="agree"][type="checkbox"] + span {
+            color: red;
+        }
+
+        form > label > input[name="agree"][type="checkbox"]:checked + span {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<!--<span>Hi!</span>-->
+<!--<br>-->
+<!--<br>-->
+
+<form>
+    <label>
+        <span>이용약관</span>
+        <br>
+        <textarea readonly>이용약관</textarea>
+    </label>
+    <br>
+    <label>
+        <input name="agree" type="checkbox">
+        <span>위 이용약관에 동의합니다.</span>
+    </label>
+</form>
+
+</body>
+</html>

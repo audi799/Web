@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+#main > .input {
+    align-items: stretch;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#main > .input.visible {
+    display: flex;
+}
+
+#main > .input > .caption-container {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 0 3rem;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .input > .caption-container > .title {
+    font-size: 1.8rem;
+}
+
+#main > .input > .caption-container > .icon {
+    margin: 0 0.5rem;
+    top: 0.2rem;
+    height: 1.6rem;
+
+    position: relative;
+}
+
+#main > .input > .caption-container > .subtitle {
+    font-size: 1.8rem;
+    color: #2183d8;
+}
+
+#main > .input > .input-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .input > .input-container > .number {
+    margin-right: 3rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .input > .input-container > .number > .caption {
+    font-size: 2rem;
+}
+
+#main > .input > .input-container > .number > .caption > .word-point {
+    color: #2183d8;
+}
+
+#main > .input > .input-container > .number > .box-container {
+    color: black;
+    font-size: 3.5rem;
+    text-shadow: none;
+    text-align: center;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .input > .input-container > .number > .box-container {
+    margin: 1rem 0;
+}
+
+#main > .input > .input-container > .number > .box-container > .box {
+    margin: 0 0.5rem;
+
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: white;
+}
+
+#main > .input > .input-container > .keypad {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .input > .input-container > .keypad > .key-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .input > .input-container > .keypad > .key-row > .button {
+    width: 8rem;
+    height: 8rem;
+
+    font-family: inherit;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+
+    background-color: inherit;
+
+    border-color: darkgray;
+}
+
+#main > .input > .input-container > .keypad > .key-row > .button:active {
+    filter: brightness(80%);
+}
+
+#main > .input > .input-container > .keypad > .key-row > .button.cancel {
+    background-color: #c32c2c;
+}
+
+#main > .input > .input-container > .keypad > .key-row > .button.confirm {
+    background-color: #1e73be;
+}

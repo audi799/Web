@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import "common.css";
+@import "index.header.css";
+@import "index.main.home.css";
+@import "index.main.input.css";
+@import "index.main.info.css";
+@import "index.main.output.css";
+@import "index.dialog.css";
+
+#header {
+    border-bottom: 0.0625rem solid black;
+    box-shadow: 0.0625rem 0.0625rem 2rem 0.1rem #28342a;
+
+    display: none;
+}
+
+#header.visible {
+    display: block;
+}

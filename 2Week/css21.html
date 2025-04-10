@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS21</title>
+    <style>
+        /*
+        요지: body보다 4배큰 배경 이미지를 그라디언트로 만들고, 그 배경 이미지의 위치를 지속적으로 움직여 주는 것
+        (15초 동안 무한히 반복. 왜 top, left 가 아니고 0%, 50%, 100%를 썻는가? top, left 는 animation이 안 먹힘: 중간 값이 없어서)
+        > jpg 파일로 해보면 이해하기 쉬울듯
+         */
+        body {
+            height: 100vh;
+            background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            background-image: url("background.jpg");
+
+            /*아직 안 배운거*/
+            animation: background 15s ease infinite;
+            margin: 0;
+        }
+
+        /*아직 많이 안배운거*/
+        @keyframes background {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+
+</body>
+</html>

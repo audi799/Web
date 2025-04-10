@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css1</title>
+    <style>
+        .container {
+            height: 12rem;
+            background-color: #f0e0d0;
+
+            /*align-items: stretch;*/
+            align-items: center;
+
+            display: flex;
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+
+            /*gap: 3rem;*/
+
+            /*flex-wrap: wrap;*/
+            /*align-content: flex-start;*/
+
+            /*justify-content: flex-start;*/
+            /*justify-content: center;*/
+            /*justify-content: space-between;*/
+            /*justify-content: space-evenly;*/
+            /*justify-content: space-around;*/
+        }
+
+        .container > .item {
+            background-color: #c0f0d0;
+            font-size: 3rem;
+        }
+
+        .container > b.item {
+            background-color: #5499c7;
+            flex-grow: 1;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="item">DIV</div>
+    <span class="item">SPAN</span>
+    <section class="item">SECTION</section>
+    <b class="item">B</b>
+    <nav class="item">NAV</nav>
+</div>
+
+</body>
+</html>

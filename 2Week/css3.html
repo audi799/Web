@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3</title>
+    <style>
+        [href^="https://"] {
+            color: yellow;
+        }
+
+        [href$=".com"] {
+            color: green;
+        }
+
+        [href*="google"] {
+            color: green;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<a>네이버</a>
+<a href="#" data-my-vars="www naver com">이동하기</a>
+<a>다음</a>
+<a href="#" data-my-vars="www daum net">이동하기</a>
+<a>구글</a>
+<a href="https://www.google.com" data-my-vars="www google com">이동하기</a>
+</body>
+</html>

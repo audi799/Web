@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTest3</title>
+    <style>
+        .container {
+            width: 25rem;
+        }
+
+        .container > div > label {
+            display: block;
+            background-color: lightgray;
+        }
+
+        .container > div {
+            position: relative;
+        }
+
+        .container > div > label > .up {
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+
+        .container > div > label > .down {
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+
+        .container > div > label > input[type="checkbox"]:checked ~ .down {
+            display: inline;
+        }
+
+        .container > div > label > input[type="checkbox"]:not(:checked)~ .up {
+            display: inline;
+        }
+
+        .container > div > label > input[type="checkbox"] {
+            display: none;
+        }
+
+        .container > div > span {
+            display: none;
+        }
+
+        .container > div > label:has(input[type="checkbox"]:checked) + span {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <label>
+            <span>ive</span>
+            <input type="checkbox">
+            <span class="up">↑</span>
+            <span class="down">↓</span>
+        </label>
+        <span>2021년 12월 1일에 데뷔한 스타쉽엔터테인먼트 소속의 6인조 다국적 걸그룹이다.</span>
+    </div>
+    <div>
+        <label>
+            <span>aespa</span>
+            <input type="checkbox">
+            <span class="up">↑</span>
+            <span class="down">↓</span>
+        </label>
+        <span>2020년 11월 17일에 데뷔한 SM엔터테인먼트 소속의 4인조 다국적 걸그룹니다.</span>
+    </div>
+</div>
+
+</body>
+</html>

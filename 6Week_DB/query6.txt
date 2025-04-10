@@ -1,0 +1,31 @@
+select concat(concat(T0.student_grade, '학년 '), concat(T0.student_class, '반 '), concat(T0.student_member, '번')) as 학년,
+       T1.name                                                                                                 as 이름,
+       truncate(avg(T0.value), 2)                                                                              as 평균점수
+from `school`.`scores` T0
+         left join `school`.`students` T1
+                    on T1.grade = T0.student_grade
+                        and T1.class = T0.student_class
+                        and T1.number = T0.student_member
+group by T0.student_grade, T0.student_class, T0.student_member, T1.name
+order by truncate(avg(T0.value), 2) desc;
+
+select T1.student_grade           as 학년,
+       T1.student_class           as 반,
+       T0.text                    as 과목,
+       truncate(avg(T1.value), 2) as 평균점수
+from `school`.`subject` T0
+         left join `school`.scores T1
+                    on T1.subject_code = T0.code
+group by T1.student_grade, T1.student_class, T0.text
+order by T1.student_grade, T1.student_class, T0.code;
+
+select T0.text                    as 과목,
+       count(T1.student_member)   as 응시자수,
+       truncate(avg(T1.value), 2) as 평균,
+       max(T1.value)              as 최고득점,
+       min(T1.value)              as 최저득점
+from `school`.`subject` T0
+         left join `school`.`scores` T1
+                    on T1.subject_code = T0.code
+group by T0.text
+order by T0.code;

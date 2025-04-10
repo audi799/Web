@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@import "index.header.css";
+@import "index.main.css";
+
+#header {
+    width: 60rem;
+    margin: 0 auto;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main {
+    width: 60rem;
+    margin: 0 auto auto auto;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "index.header.css";
+@import "index.main.css";
+
+#header {
+    width: 100%;
+    padding: 1rem 0;
+
+    background-color: #ffffff;
+    border-bottom: 0.1rem #8c8c8c solid;
+    position: fixed;
+
+    z-index: 1;
+}
+
+#main {
+    width: 100%;
+    padding-top: 4.5rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#footer {
+    padding: 3rem 0;
+    background-color: #000000;
+
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 50rem) {
+    #header {
+        padding: 0.4rem 0;
+    }
+}

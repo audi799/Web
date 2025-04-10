@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="ddd">
+    <div>
+        <div name="divName"></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<script>
+    /*
+    ddd.querySelectorAll('div');
+    // ddd.querySelectorAll('> div'); //이렇게 사용은 불가능함.
+    ddd.querySelectorAll(':scope > div'); //:scope 사용하면 ddd 를 의미함. 즉 ddd의 자식인 div 3개만 선택됨.
+    */
+
+    let divs = ddd.querySelectorAll(':scope > div > div');
+    for (let loop = 0; loop < divs.length; loop++) {
+        divs[loop].innerText = loop + 1;
+        divs[loop].style.fontSize = (loop + 1) + 'rem';
+    }
+</script>
+
+</body>
+</html>

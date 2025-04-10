@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style>
+        .box {
+            width: 20rem;
+            height: 20rem;
+            background-color: #ec7063;
+            transition-duration: 1000ms;
+            font-size: 3rem;
+            transition-property: background-color;
+            /*스무스하게 바뀌게할 속성만 적으면 된다.*/
+
+            /*transition-duration: 1s;*/
+
+            /*display: block;*/
+            /*중간 값이 없는 경우(display 등..), transition-duration 적용되지 않는다.*/
+
+            opacity: 100%;
+
+            transition-delay: 2000ms;
+        }
+
+        .box:hover {
+            background-color: #5499c7;
+
+            /*display: none;*/
+
+            opacity: 50%;
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">Hello</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style>
+        .box {
+            width: 30rem;
+            height: 20rem;
+            background-color: #212f3d;
+            box-sizing: border-box;
+            color: #eaecee;
+            padding: 3rem;
+        }
+
+        .box > .text {
+            top: 0.5rem;
+            opacity: 0;
+            position: relative;
+            transition-duration: 250ms;
+            transition-property: top, opacity;
+        }
+
+        .box:hover > .text {
+            top: 0;
+            opacity: 1;
+        }
+
+        .box > .text.title {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .box > .text.desc {
+            transition-delay: 125ms;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="text title">라면</div>
+    <div class="text desc">라면, 정말 맛있습니다.</div>
+</div>
+
+</body>
+</html>

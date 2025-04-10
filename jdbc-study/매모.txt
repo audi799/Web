@@ -1,0 +1,1 @@
+https://mvnrepository.com/ 사이트에서 MariaDB Maven(의존성관리자) 다운로드사이트

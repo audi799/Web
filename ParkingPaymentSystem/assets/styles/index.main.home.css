@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+#main > .home {
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .home.visible {
+    display: flex;
+}
+
+#main > .home > .title {
+    font-size: 3.2rem;
+    margin-top: 1.2rem;
+    margin-bottom: -0.5rem;
+}
+
+#main > .home > .title > sup {
+    font-size: 1.2rem;
+}
+
+#main > .home > .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+#main > .home > .button-container {
+    margin-bottom: 3rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .home > .button-container > .empty {
+    width: 1.5rem;
+}
+
+#main > .home > .button-container > button[type="button"] {
+    font: inherit;
+    color: inherit;
+
+    background-color: transparent;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .home > .button-container button[type="button"] {
+    border-radius: 1rem;
+}
+
+#main > .home > .button-container button[type="button"]:active {
+    filter: brightness(80%);
+}
+
+#main > .home > .button-container button[type="button"] > .image {
+    margin: 4.8rem 4.8rem;
+
+    height: 9rem;
+}
+
+#main > .home > .button-container > button[type="button"] > .caption {
+    margin-bottom: 1.5rem;
+
+    font-size: 1.8rem;
+}
+
+#main > .home > .description {
+    margin-bottom: 0.8rem;
+
+    font-size: 1.35rem;
+}
+
+#main > .home > .description > .character-point {
+    font-size: 1.8rem;
+}
+
+#main > .home > .description > .word-point {
+    color: #2183d8;
+}
+
+#main > .home > .contact {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .home > .contact > .call-icon {
+    height: 2.2rem;
+}
+
+#main > .home > .contact > .tel {
+    font-size: 2rem;
+
+    letter-spacing: 0.25rem;
+}

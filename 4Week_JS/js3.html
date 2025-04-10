@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js3</title>
+    <script>
+        let nums = [7, 3, 6, 1];
+        nums.every((x, i, a) => {
+            return x > 0;
+        })
+        console.log(nums);
+
+        let bigNum = nums.filter((x) => x > 5);
+        console.log(bigNum);
+
+        let test = nums.find((x) => x < 5);
+        console.log(test);
+
+        let test_2 = nums.findLast((x) => x < 5);
+        console.log(test_2);
+
+        nums.forEach((x) => console.log(x));
+
+        let test_3 = nums.some((x) => x > 5);
+        console.log(test_3);
+
+        let test_4 = nums.map((x) => x * 2);
+        console.log(test_4);
+
+        let test_5 = nums.reduce((acc, x) => acc + x, 0);
+        console.log(test_5);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

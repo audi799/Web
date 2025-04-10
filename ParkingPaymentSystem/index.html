@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>무인주차정산시스템</title>
+    <link rel="icon" href="assets/images/icon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/styles/index.css" type="text/css">
+    <link rel="stylesheet" href="./assets/styles/common.css" type="text/css">
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <script defer src="./assets/scripts/index.js"></script>
+</head>
+<body>
+<div id="dialog">
+    <div class="content">
+        <span class="text">텍스트상자입니다.</span>
+        <div class="button-container">
+            <span class="stretch" role="none"></span>
+            <button class="close" type="button">닫기</button>
+        </div>
+    </div>
+</div>
+<header id="header">
+    <ul class="menu">
+        <li class="item">
+            <h2 class="title">Hi Parking<sup>TM</sup> 주차정산기</h2>
+        </li>
+        <li class="stretch"></li>
+        <li class="item">
+            <img src="./assets/images/header.menu.item.call.png" alt="call" class="call-icon">
+            <span class="caption">1588-8851</span>
+        </li>
+        <li class="item">
+            <img src="./assets/images/header.menu.item.back-arrow.png" alt="" class="back-icon">
+        </li>
+        <li class="item">
+            <img src="assets/images/main.home.png" alt="" class="home-icon">
+        </li>
+    </ul>
+</header>
+<main id="main">
+    <div class="home visible">
+        <h1 class="title">Hi PARKING<sup>TM</sup> 스마트 주차 정산기</h1>
+        <h2 class="subtitle">SMART & AUTOMATIC PARKING PAY STATION</h2>
+        <div class="button-container">
+            <button class="payment" type="button">
+                <img src="assets/images/main.home.button-container.payment.png" alt="" class="image">
+                <span class="caption">요금정산</span>
+            </button>
+            <div class="empty" role="none"></div>
+            <button class="join" type="button">
+                <img src="assets/images/main.home.button-container.join.png" alt="" class="image">
+                <span class="caption">회원가입</span>
+            </button>
+        </div>
+        <span class="description">
+            <span class="character-point">※</span> 하이파킹 회원으로 가입하시면 더 많은 <span class="word-point">혜택</span>들이 기다리고 있습니다.
+        </span>
+        <div class="contact">
+            <img src="./assets/images/header.menu.item.call.png" alt="" class="call-icon">
+            <span class="tel">1588-8851</span>
+        </div>
+    </div>
+    <div class="input">
+        <div class="caption-container">
+            <img src="assets/images/main.home.button-container.payment.png" alt="" class="icon">
+            <span class="title">요금정산</span>
+            <img src="assets/images/main.arrow.png" alt="" class="icon">
+            <span class="subtitle">차량번호 입력</span>
+        </div>
+        <div class="input-container">
+            <div class="number">
+                <span class="caption">차량번호 4자리 입력 후
+                    <br>
+                    <span class="word-point">확인</span>
+                    버튼을 눌러주세요
+                </span>
+                <div class="box-container">
+                    <div class="box first"></div>
+                    <div class="box second"></div>
+                    <div class="box third"></div>
+                    <div class="box fourth"></div>
+                </div>
+            </div>
+            <div class="keypad">
+                <div class="key-row">
+                    <button class="button pad1" type="button">1</button>
+                    <button class="button pad2" type="button">2</button>
+                    <button class="button pad3" type="button">3</button>
+                </div>
+                <div class="key-row">
+                    <button class="button pad4" type="button">4</button>
+                    <button class="button pad5" type="button">5</button>
+                    <button class="button pad6" type="button">6</button>
+                </div>
+                <div class="key-row">
+                    <button class="button pad7" type="button">7</button>
+                    <button class="button pad8" type="button">8</button>
+                    <button class="button pad9" type="button">9</button>
+                </div>
+                <div class="key-row">
+                    <button class="button cancel" type="button">취소</button>
+                    <button class="button pad0" type="button">0</button>
+                    <button class="button confirm" type="button">확인</button>
+                </div>
+            </div>
+        </div>
+        <span class="car-list">현재 입차된 차량번호: 2603 3563 4464 4946 5733 9550</span>
+    </div>
+    <div class="info">
+        <div class="caption-container">
+            <img src="assets/images/main.home.button-container.payment.png" alt="" class="icon">
+            <span class="title">요금정산</span>
+            <img src="assets/images/main.arrow.png" alt="" class="icon">
+            <span class="subtitle">결제</span>
+        </div>
+        <div class="select-container">
+            <div class="car-container">
+                <div class="car">
+                    <img src="assets/images/car.2603.JPG" alt="" class="picture">
+                    <span class="car-number">38수2603</span>
+                </div>
+                <div class="parking">
+                    <span class="caption">
+                        할인권 사용 시
+                        <span class="word-point">일 최대 할인 요금</span>
+                        에서 먼저 차감됩니다.
+                    </span>
+                    <table class="table">
+                        <tr>
+                            <th scope="row">입차시각</th>
+                            <td class="input-time">2025-03-17 12:19:21</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주차시간</th>
+                            <td class="parking-time">12시간 00분</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="blue">일최대할인요금</th>
+                            <td>50,000 원</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="blue">할인요금</th>
+                            <td>0 원</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="red">결제금액</th>
+                            <td class="amount">70,000 원</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="text">
+            결제 금액을 확인하시고
+            <img src="./assets/images/main.info.text.icon.png" alt="" class="icon">
+            할인권 혹은 신용카드를 넣어주세요.
+        </div>
+        <div class="mobile">
+            <span class="word-point">카카오페이 결제</span>
+            <span>를 원하시면 우측 버튼을 터치해주세요</span>
+            <img src="assets/images/main.arrow.png" alt="" class="arrow">
+            <img src="assets/images/main.arrow.png" alt="" class="arrow">
+            <button class="payment" type="submit">
+                <img src="./assets/images/main.info.mobile.payment.icon.png" alt="" class="icon">
+                <span class="text">카카오페이 결제</span>
+            </button>
+        </div>
+    </div>
+    <div class="output">
+        <div class="text-container">
+            <span class="text">
+                결제가 완료되었습니다.
+                <br>
+                이용해주셔서 감사합니다.
+            </span>
+        </div>
+        <div class="amount">
+            <div class="top">
+                <span class="datetime">2025-03-17 03:03:00</span>
+                <span class="stretch" role="none"></span>
+                <span class="store">(주)하이파킹</span>
+            </div>
+            <span class="center">본인 | 카카오페이 | 일시불</span>
+            <span class="cost">70,000 원</span>
+        </div>
+        <table class="table">
+            <tr>
+                <th scope="row">결제번호</th>
+                <td class="payment number">1234-5678-9123-4123</td>
+                <th scope="row">차량번호</th>
+                <td class="payment name">38수2603</td>
+            </tr>
+            <tr>
+                <th scope="row">승인일자</th>
+                <td class="payment datetime">2025-03-17 03:03:00</td>
+                <th scope="row">결제구분</th>
+                <td class="payment kakao">카카오페이</td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <button class="home" type="button">
+                <img src="assets/images/main.home.png" alt="" class="icon">
+                <span class="caption">처음으로</span>
+            </button>
+            <button class="print" type="button">
+                <img src="./assets/images/main.output.button-container.print.png" alt="" class="icon">
+                <span class="caption">영수증출력</span>
+            </button>
+        </div>
+    </div>
+</main>
+</body>
+</html>

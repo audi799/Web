@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js4</title>
+    <script>
+        let countryMap = {
+            KR: '대한민국',
+            US: '미국',
+            JP: '일본',
+            FR: '프랑스',
+            DE: '독일'
+        };
+
+        let keys = Object.keys(countryMap);
+
+        keys.forEach( (key) => {
+            console.log(`코드가 ${key}인 나라의 이름은 ${countryMap[key]}`);
+        } );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

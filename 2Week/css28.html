@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css28</title>
+    <style>
+        .box {
+            width: 5rem;
+            height: 5rem;
+            background-color: #5499c7;
+            color: #ffffff;
+            padding: 1rem;
+
+            border-radius: 1.2rem;
+
+            border: 0.0625rem solid #ec7063;
+            /*border: 0.25rem ridge #ec7063;*/
+            /*dashed : 일반 점선*/
+            /*dotted : 둥근 점선*/
+            /*double : 이중 실선*/
+            /*grooved : 파인 입체 실선*/
+            /*ridge : 돌출 입체 실선*/
+            /*solid : 실선*/
+
+            transform: rotateY(45deg);
+        }
+
+        .box:hover {
+            transform: translate(2.5rem, 2.5rem);
+        }
+
+        .box:active {
+            transform: rotateZ(45deg) scale(120%);
+            /*transform: scale(1.2); !* 110%와 같다 *!*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">하품</div>
+
+</body>
+</html>

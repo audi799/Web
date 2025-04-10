@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS2</title>
+    <style>
+        /*#username {*/
+        /*    color: #3498db;*/
+        /*    font-weight: bold;*/
+        /*}*/
+
+        a[href] {
+            color: red;
+            text-decoration: none;
+        }
+
+        a[href="https://www.google.com"] {
+            font-weight: bold;
+        }
+
+        [data-my-vars~="net"] {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<!--<span id="username">관리자</span>-->
+
+<a>네이버</a>
+<a href="#" data-my-vars="www naver com">이동하기</a>
+<a>다음</a>
+<a href="#" data-my-vars="www daum net">이동하기</a>
+<a>구글</a>
+<a href="https://www.google.com" data-my-vars="www google com">이동하기</a>
+</body>
+</html>

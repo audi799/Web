@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+#main > .info {
+    align-items: stretch;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#main > .info.visible {
+    display: flex;
+}
+
+#main > .info > .caption-container {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 0 3rem;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#main > .info > .caption-container > .title {
+    font-size: 1.8rem;
+}
+
+#main > .info > .caption-container > .icon {
+    margin: 0 0.5rem;
+    top: 0.2rem;
+    height: 1.6rem;
+
+    position: relative;
+}
+
+#main > .info > .caption-container > .subtitle {
+    font-size: 1.8rem;
+    color: #2183d8;
+}
+
+#main > .info > .select-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .info > .select-container > .car-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .info > .select-container > .car-container > .car {
+    margin-right: 5rem;
+
+    outline: 1rem solid #151e14;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .info > .select-container > .car-container > .car > .picture {
+    height: 15rem;
+}
+
+#main > .info > .select-container > .car-container > .car > .car-number {
+    width: 100%;
+    padding: 1.5rem 0;
+
+    text-align: center;
+    font-size: 2.5rem;
+    color: black;
+
+    border-radius: 0.3rem;
+
+    background-color: white;
+}
+
+#main > .info > .select-container > .car-container > .parking {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .info > .select-container > .car-container > .parking > .caption {
+    font-size: 1.2rem;
+}
+
+#main > .info > .select-container > .car-container > .parking > .caption > .word-point {
+    color: #2183d8;
+}
+
+#main > .info > .select-container > .car-container > .parking > .table {
+    outline: 0.0625rem solid white;
+}
+
+#main > .info > .select-container > .car-container > .parking > .table th {
+    height: 4rem;
+    width: 8rem;
+
+    font-size: 1.2rem;
+    outline: 0.0625rem solid white;
+}
+
+#main > .info > .select-container > .car-container > .parking > .table td {
+    padding-right: 1.5rem;
+
+    width: 18rem;
+
+    font-size: 1.4rem;
+    text-align: right;
+    outline: 0.0625rem solid white;
+}
+
+#main > .info > .select-container > .car-container > .parking > .table tr > .blue {
+    background-color: #1e73be;
+}
+
+#main > .info > .select-container > .car-container > .parking > .table tr > .red {
+    background-color: #c32c2c;
+}
+
+#main > .info > .text {
+    margin: 1.2rem 0;
+
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#main > .info > .text > .icon {
+    top: 0.8rem;
+    height: 2.8rem;
+
+    position: relative;
+}
+
+#main > .info > .mobile {
+    font-size: 1.5rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main > .info > .mobile > .word-point {
+    color: #c32c2c;
+}
+
+#main > .info > .mobile > .arrow {
+    margin: 0 0.2rem;
+    height: 1.4rem;
+}
+
+#main > .info > .mobile > .payment {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #7f2929;
+}
+
+#main > .info > .mobile > .payment:active {
+    filter: brightness(80%);
+}
+
+#main > .info > .mobile > .payment > .icon {
+    height: 3rem;
+}
+
+#main > .info > .mobile > .payment > .text {
+    color: white;
+    text-shadow: 0.05rem 0.05rem 0 #c48321;
+}

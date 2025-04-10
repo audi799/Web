@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+#header > .menu {
+    width: 100%;
+
+    padding: 1rem 1rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    box-sizing: border-box;
+}
+
+#header > .menu > .stretch {
+    flex-grow: 1;
+}
+
+#header > .menu > .item > .title {
+    font-size: 2.6rem;
+    margin: 0 0;
+}
+
+#header > .menu > .item > .title > sup {
+    font-size: 0.9rem;
+}
+
+#header > .menu > .item > .caption {
+    font-size: 2.2rem;
+}
+
+#header > .menu > .item {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#header > .menu > .item > .call-icon {
+    margin: 0 0.5rem;
+    height: 2rem;
+}
+
+#header > .menu > .item > .back-icon {
+    margin: 0 1.5rem;
+    height: 2rem;
+}
+
+#header > .menu > .item > .home-icon {
+    margin: 0 1.5rem;
+    height: 2rem;
+}
+
+#header > .menu > .item > .back-icon:active,
+#header > .menu > .item > .home-icon:active{
+    filter: brightness(80%);
+}

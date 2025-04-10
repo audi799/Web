@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scroll 예제</title>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" type="text/css">
+    <link href="./locomotive-scroll.css" rel="stylesheet" type="text/css">
+    <script src="./locomotive-scroll.min.js" type="text/javascript"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            cursor: default;
+            line-height: 1;
+            min-height: 100%;
+            margin: initial;
+            user-select: none;
+        }
+
+        body > .container > .section {
+            height: 100vh;
+            min-height: 100vh;
+            max-height: 100vh;
+
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+            justify-content: center;
+        }
+
+        body > .container > .section:nth-of-type(1) {
+            background-color: #F8F3D9;
+        }
+
+        body > .container > .section:nth-of-type(2) {
+            background-color: #EBE5C2;
+        }
+
+        body > .container > .section:nth-of-type(3) {
+            background-color: #B9B28A;
+        }
+
+        body > .container > .section:nth-of-type(1) > .char-container {
+            font-family: "Monoton", sans-serif;
+            font-size: 5vw;
+            font-weight: 400;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 0.25vw;
+            justify-content: center;
+        }
+
+        body > .container > .section:nth-of-type(1) > .char-container > .char {
+            width: 8vw;
+            aspect-ratio: 1/1;
+            background-color: #FFFFFF;
+            line-height: 0;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        body > .container > .section:nth-of-type(2) > .char-container {
+            font-family: "Monoton", sans-serif;
+            font-size: 5vw;
+            font-weight: 400;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 0.25vw;
+            justify-content: center;
+        }
+
+        body > .container > .section:nth-of-type(2) > .char-container > .char {
+            width: 8vw;
+            aspect-ratio: 1/1;
+            background-color: #FFFFFF;
+            line-height: 0;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        body > .container > .section:nth-of-type(3) > .char-container {
+            font-family: "Monoton", sans-serif;
+            font-size: 5vw;
+            font-weight: 400;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 0.25vw;
+            justify-content: center;
+        }
+
+        body > .container > .section:nth-of-type(3) > .char-container > .char {
+            width: 8vw;
+            aspect-ratio: 1/1;
+            background-color: #FFFFFF;
+            line-height: 0;
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<!-- data-scroll-container: 스크롤 컨테이너로 지정 -->
+<!-- data-scroll-section: 스크롤 컨테이너 내부에서 구역을 나눔 -->
+<!-- data-scroll: 뷰 안에 들어왔을 때 감지할 대상으로 지정 -->
+<!-- data-scroll-direction: 스크롤 시킬 방향 (vertical 혹은 horizontal) -->
+<!-- data-scroll-delay: 지연 계수 -->
+<!-- data-scroll-speed: 스크롤 속도 -->
+<!-- 추가 라이브러리 정보는 https://github.com/locomotivemtl/locomotive-scroll 에서 확인 -->
+<div class="container" data-scroll-container>
+    <div class="section" data-scroll-section>
+        <div class="char-container" data-scroll>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.200" data-scroll-speed="6">H</span>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.175" data-scroll-speed="6">E</span>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.150" data-scroll-speed="6">L</span>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.125" data-scroll-speed="6">L</span>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.100" data-scroll-speed="6">0</span>
+        </div>
+    </div>
+    <div class="section" data-scroll-section>
+        <div class="char-container" data-scroll>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.200" data-scroll-speed="2.5">G</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.175" data-scroll-speed="2.5">O</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.150" data-scroll-speed="2.5">O</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.125" data-scroll-speed="2.5">D</span>
+        </div>
+        <div class="char-container" data-scroll>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.200" data-scroll-speed="-0.9375">A</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.190" data-scroll-speed="-0.9375">F</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.180" data-scroll-speed="-0.9375">T</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.170" data-scroll-speed="-0.9375">E</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.160" data-scroll-speed="-0.9375">R</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.150" data-scroll-speed="-0.9375">N</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.140" data-scroll-speed="-0.9375">O</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.130" data-scroll-speed="-0.9375">O</span>
+            <span class="char" data-scroll data-scroll-direction="horizontal" data-scroll-delay="0.120" data-scroll-speed="-0.9375">N</span>
+        </div>
+    </div>
+    <div class="section" data-scroll-section>
+        <div class="char-container" data-scroll>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.150" data-scroll-speed="2">B</span>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.175" data-scroll-speed="2">Y</span>
+            <span class="char" data-scroll data-scroll-direction="vertical" data-scroll-delay="0.200" data-scroll-speed="2">E</span>
+        </div>
+    </div>
+</div>
+<script>
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
+    });
+</script>
+</body>
+</html>
